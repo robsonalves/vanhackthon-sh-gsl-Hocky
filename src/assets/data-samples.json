@@ -1,0 +1,23 @@
+{
+ "events": [
+    {
+        "name":"CANADA VS USA MATCH ICE HOCKET",
+        "description":"BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA",
+        "date":"2017-11-23",
+        "imgUrl": "./assets/imgs/match.jpg",
+        "likes":"65",
+        "comments": "32"
+        
+    },
+    {
+        "name":"GUNS IN ROSES CONCERT",
+        "description":"BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA",
+        "date":"2017-11-23",
+        "imgUrl": "./assets/imgs/concert.jpg",
+        "likes":"153",
+        "comments": "54"
+        
+    }
+    
+]
+}

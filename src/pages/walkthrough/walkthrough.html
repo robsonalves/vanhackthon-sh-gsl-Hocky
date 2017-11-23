@@ -1,0 +1,54 @@
+<ion-header class="walkthrough-header">
+    <ion-toolbar>
+        <ion-buttons end>
+          <button ion-button class="skip-button" (click)="skipIntro()" [hidden]="lastSlide">Skip</button>
+        </ion-buttons>
+      </ion-toolbar>  
+    
+</ion-header>
+
+    <ion-content padding class="walkthrough-content">        
+        <ion-slides #slider (ionSlideDidChange)="onSlideChanged()" pager="true">
+          <ion-slide>
+            <ion-row>
+              <ion-col center width-64 no-padding>
+                
+                <img class='img'src='assets/imgs/logo.png'/>
+              </ion-col>
+            </ion-row>
+            <h2 class="main-title">Welcome!</h2>
+            <p class="intro-text">
+              This is the new app from <b>GSL</b>
+            </p>
+          </ion-slide>         
+          <ion-slide class="slide-4">
+            <ion-row class="intro-image-row">
+              <ion-col center width-64 no-padding>
+                  <img class='img' src='assets/imgs/logo.png'/>
+              </ion-col>
+            </ion-row>
+            <h2 class="main-title">Almost there!</h2>
+            <p class="intro-text">
+              Let's add your account.
+            </p>
+            <p class="intro-text">
+              bla bla bla bla!
+            </p>
+            <div>
+              <ion-row>
+                <ion-col width-50>
+                    <button ion-button color="button" block (click)="goToLogin()">Sign In</button>
+                  
+                </ion-col>
+                <ion-col width-50>
+                    <button ion-button color="button" block (click)="goToSignup()">Sign Up</button>
+                  
+                </ion-col>
+                
+              </ion-row>
+            </div>
+          </ion-slide>
+        </ion-slides>
+      </ion-content>      
+
+
