@@ -20,8 +20,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { EventService } from "../services/event.service";
 import { HttpModule } from "@angular/http";
 
-import {AngularFireModule } from 'angularfire2'
-import {AngularFireDatabaseModule } from 'angularfire2/database'
+import { AngularFireModule } from 'angularfire2'
+import { AngularFireDatabaseModule } from 'angularfire2/database'
 
 
 @NgModule({
@@ -54,7 +54,7 @@ import {AngularFireDatabaseModule } from 'angularfire2/database'
     SplashScreen,
     AuthService,
     EventService,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    { provide: ErrorHandler, useClass: IonicErrorHandler }
   ]
 })
-export class AppModule {}
+export class AppModule { }
