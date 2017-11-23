@@ -26,7 +26,7 @@ export class EventsListPage {
   }
 
   goHome(){
-    this.navCtrl.push(HomePage)
+    this.navCtrl.popToRoot();
   }
 
 }
