@@ -1,3 +1,5 @@
+import { EventsListPage } from './../pages/events-list/events-list';
+import { GamePage } from './../pages/game/game';
 
 import { AuthService } from './../services/auth.service';
 import { WalkthroughPage } from './../pages/walkthrough/walkthrough';
@@ -22,6 +24,7 @@ import { HttpModule } from "@angular/http";
 
 import { AngularFireModule } from 'angularfire2'
 import { AngularFireDatabaseModule } from 'angularfire2/database'
+import { ConcertPage } from '../pages/concert/concert';
 
 
 @NgModule({
@@ -31,7 +34,10 @@ import { AngularFireDatabaseModule } from 'angularfire2/database'
     ListPage,
     SigninPage,
     SignupPage,
-    WalkthroughPage
+    WalkthroughPage,
+    ConcertPage,
+    GamePage,
+    EventsListPage
   ],
   imports: [
     BrowserModule,
@@ -47,7 +53,10 @@ import { AngularFireDatabaseModule } from 'angularfire2/database'
     ListPage,
     SigninPage,
     SignupPage,
-    WalkthroughPage
+    WalkthroughPage,
+    ConcertPage,
+    GamePage,
+    EventsListPage
   ],
   providers: [
     StatusBar,
