@@ -1,0 +1,27 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>Rewards</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <h1> My rewards - Details</h1>
+    <div class="row header">
+        <div class="col">Date</div>
+        <div class="col">Points</div>
+        <div class="col">Place</div>
+        <div class="col"></div>
+    </div>
+    <div class="row" ng-repeat="data in reward">
+        <div class="col">{{reward[0].date}}</div>
+        <div class="col">{{reward[0].point}}</div>
+        <div class="col">{{reward[0].place}}</div>
+        <div class="col">
+            <button class="button" ng-click="ctrl.add($index)">Add</button>
+        </div>
+    </div>
+</ion-content>
+

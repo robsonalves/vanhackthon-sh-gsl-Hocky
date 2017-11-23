@@ -25,7 +25,6 @@ export class HomePage implements OnInit {
         (data) => {
           this.events = data,
           console.log(data)
-
         }
       )
   }

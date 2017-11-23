@@ -6,6 +6,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
+import { RewardPage } from '../pages/reward/reward';
 
 import firebase from 'firebase';
 
@@ -17,10 +18,10 @@ export class MyApp {
 
   isAuthenticated: boolean = false;
 
-  
+
   rootPage: any;// = HomePage;
 
-  pages: Array<{title: string, component: any}>;
+  pages: Array<{ title: string, component: any }>;
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
     this.initializeApp();
@@ -28,7 +29,8 @@ export class MyApp {
     // used for an example of ngFor and navigation
     this.pages = [
       { title: 'Home', component: HomePage },
-      { title: 'List', component: ListPage }
+      { title: 'List', component: ListPage },
+      { title: 'Reward', component: RewardPage }
     ];
 
   }
@@ -45,19 +47,19 @@ export class MyApp {
       });
 
 
-      firebase.auth().onAuthStateChanged(user =>{
-        if(user){
+      firebase.auth().onAuthStateChanged(user => {
+        if (user) {
           this.isAuthenticated = true;
           this.rootPage = HomePage;
         }
-        else{
+        else {
           this.isAuthenticated = false;
-          this.rootPage = WalkthroughPage;
+          this.rootPage = RewardPage;
 
         }
 
       })
-      
+
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
       this.statusBar.styleDefault();
