@@ -1,12 +1,19 @@
+
 import { Component, OnInit } from '@angular/core';
+
+import { IonicPage } from 'ionic-angular/navigation/ionic-page';
+import { Component } from '@angular/core';
+
 import { NavController } from 'ionic-angular';
 import { EventModel } from "../../models/event.model";
 import { EventService } from "../../services/event.service";
 
+@IonicPage()
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
+
 export class HomePage  implements OnInit {
   events: EventModel[] = [];
    
@@ -14,6 +21,10 @@ export class HomePage  implements OnInit {
     public navCtrl: NavController,
     public eventService: EventService
   ) {  }
+
+
+export class HomePage {
+
 
   ngOnInit(){   
     this.eventService.getTodaysEvents()
