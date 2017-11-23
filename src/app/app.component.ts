@@ -19,7 +19,7 @@ export class MyApp {
   isAuthenticated: boolean = false;
 
   
-  rootPage: any;// = HomePage;
+  rootPage: any = HomePage;
 
   pages: Array<{title: string, component: any}>;
 
