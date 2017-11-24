@@ -19,7 +19,7 @@ nav {
 }
 
 .col {
-    border: solid 1px grey;
+    border: none;
     border-bottom-style: none;
     border-right-style: none;
 }
@@ -29,5 +29,20 @@ nav {
 }
 
 .row:last-child .col {
-    border-bottom: solid 1px grey;
+    border-bottom: solid 40px grey;
 }
+
+.total-rewards {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: blue;
+}
+
+
+.total-rewards > h1 > span {
+    color: green;
+}
+
+// div.row {
+//     width: 30%;
+//     font-size: 15px
+// }

@@ -18,10 +18,23 @@ import { EventService } from "../../services/event.service";
 
 export class HomePage {
 
-  events$: Observable<Event[]>;
+  events: Observable<Event[]>;
 
   constructor(
     public navCtrl: NavController,
+<<<<<<< HEAD
+    public eventService: EventService
+  ) {  }
+
+  ngOnInit(){   
+    // this.eventService.getTodaysEvents()
+    //   .subscribe(
+    //     (data) => {
+    //       this.events = data,
+    //       console.log(data)
+    //     }
+    //   )
+=======
     public eventService: EventService,
     public authService : AuthService,
     public toast : ToastService
@@ -43,6 +56,7 @@ export class HomePage {
         this.navCtrl.setRoot(SigninPage)
       })
     
+>>>>>>> 8fe918e1be825956f25d28e3e3e0adad04fac687
   }
 
 
