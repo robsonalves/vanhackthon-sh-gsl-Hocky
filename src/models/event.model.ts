@@ -11,3 +11,7 @@ export interface Event{
     liked:boolean,        
     checkedIn:boolean
 }
+ export class EventJoined{
+     username : string;
+     eventKey : string;  
+ }
