@@ -13,7 +13,10 @@ export class EventService{
         return this.http.get('assets/data-samples.json')
             .map(respose => respose.json().events)
 
+    }
 
+    joinEvent(){
+        alert('Joined event');
     }
 
 }
