@@ -15,7 +15,7 @@ import { EventService } from "../../services/event.service";
 export class HomePage {
 
   events$: Observable<Event[]>;
-  
+
   constructor(
     public navCtrl: NavController,
     public eventService: EventService

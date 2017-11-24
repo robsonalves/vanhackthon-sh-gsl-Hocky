@@ -1,3 +1,7 @@
+import { MatchService } from './../services/match.service';
+import { RatePlayersPage } from './../pages/rate-players/rate-players';
+import { RatingComponent } from './../components/rating/rating';
+import { AngularFireAuth } from 'angularfire2/auth';
 import { EventsListPage } from './../pages/events-list/events-list';
 import { GamePage } from './../pages/game/game';
 
@@ -37,12 +41,15 @@ import { ConcertPage } from '../pages/concert/concert';
     WalkthroughPage,
     ConcertPage,
     GamePage,
-    EventsListPage
+    EventsListPage,
+    RatingComponent,
+    RatePlayersPage
   ],
   imports: [
     BrowserModule,
     HttpModule,
     IonicModule.forRoot(MyApp),
+
     AngularFireModule.initializeApp(FIREBASE_CONFIG),
     AngularFireDatabaseModule
   ],
@@ -56,13 +63,17 @@ import { ConcertPage } from '../pages/concert/concert';
     WalkthroughPage,
     ConcertPage,
     GamePage,
-    EventsListPage
+    EventsListPage,
+    RatingComponent,
+    RatePlayersPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     AuthService,
     EventService,
+    MatchService,
+    AngularFireAuth,
     { provide: ErrorHandler, useClass: IonicErrorHandler }
   ]
 })

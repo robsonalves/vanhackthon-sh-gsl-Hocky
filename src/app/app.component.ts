@@ -1,3 +1,4 @@
+import { RatePlayersPage } from './../pages/rate-players/rate-players';
 import { EventsListPage } from './../pages/events-list/events-list';
 import { WalkthroughPage } from './../pages/walkthrough/walkthrough';
 import { Component, ViewChild } from '@angular/core';
@@ -36,20 +37,20 @@ export class MyApp {
 
   initializeApp() {
     this.platform.ready().then(() => {
-      firebase.initializeApp({
-        apiKey: "AIzaSyAgPZIz8uvjDWjH5a9uoGmICy-7Yi7P2Ng",
-        authDomain: "gslapp-8d198.firebaseapp.com",
-        databaseURL: "https://gslapp-8d198.firebaseio.com",
-        projectId: "gslapp-8d198",
-        storageBucket: "gslapp-8d198.appspot.com",
-        messagingSenderId: "1047993594422"
-      });
+      // firebase.initializeApp({
+      //   apiKey: "AIzaSyAgPZIz8uvjDWjH5a9uoGmICy-7Yi7P2Ng",
+      //   authDomain: "gslapp-8d198.firebaseapp.com",
+      //   databaseURL: "https://gslapp-8d198.firebaseio.com",
+      //   projectId: "gslapp-8d198",
+      //   storageBucket: "gslapp-8d198.appspot.com",
+      //   messagingSenderId: "1047993594422"
+      // });
 
 
       firebase.auth().onAuthStateChanged(user =>{
         if(user){
           this.isAuthenticated = true;
-          this.rootPage = HomePage;
+          this.rootPage = RatePlayersPage;
         }
         else{
           this.isAuthenticated = false;
