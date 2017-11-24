@@ -5,14 +5,13 @@ import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class AuthService{
-    constructor(
-        public firebase: AngularFireAuth
-    ){}
-    
+  
     isAuthenticated: boolean = false;
     user$: Observable<firebase.User>;
 
-    constructor(private afAuth : AngularFireAuth){
+    constructor(private afAuth : AngularFireAuth, 
+        public firebase: AngularFireAuth
+    ){
         this.user$ = afAuth.authState;
     }
     
@@ -28,11 +27,11 @@ export class AuthService{
 
     signinWhitgGoogle(){        
         
-        return this.firebase.auth.signInWithRedirect(new fire.auth.GoogleAuthProvider());
+        return this.firebase.auth.signInWithRedirect(new firebase.auth.GoogleAuthProvider());
     }
 
     signinWithFacebook(){
-        return this.firebase.auth.signInWithRedirect(new fire.auth.FacebookAuthProvider()).then(function() {
+        return this.firebase.auth.signInWithRedirect(new firebase.auth.FacebookAuthProvider()).then(function() {
             this.firebase.auth.getRedirectResult()
           });
         
