@@ -1,4 +1,5 @@
 
+
 export interface Event{
     key? : string,
     name: string,
@@ -15,3 +16,4 @@ export interface Event{
      username : string;
      eventKey : string;  
  }
+

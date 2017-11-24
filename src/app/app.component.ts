@@ -8,6 +8,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
+import { RewardPage } from '../pages/reward/reward';
 
 import firebase from 'firebase';
 import { AuthService } from '../services/auth.service';
@@ -19,8 +20,10 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   isAuthenticated: boolean = false;
+
   rootPage: any = HomePage;
   pages: Array<{title: string, component: any}>;
+
 
   constructor(public platform: Platform, 
     public statusBar: StatusBar, 
@@ -32,8 +35,12 @@ export class MyApp {
 
     // used for an example of ngFor and navigation
     this.pages = [
+
+      { title: 'Home', component: HomePage },
+      { title: 'Reward', component: RewardPage },
       { title: "Today's Events", component: HomePage },
       { title: 'All Events', component: EventsListPage }
+
     ];
 
   }
@@ -43,7 +50,6 @@ export class MyApp {
 
      
      let authSubscription = this.authService.user$.subscribe(user => {
-
 
         if(user){
 
@@ -55,6 +61,7 @@ export class MyApp {
          
           this.rootPage = WalkthroughPage;
           authSubscription.unsubscribe();
+
         }
        
       })

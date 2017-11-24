@@ -19,15 +19,19 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
+import { RewardPage } from '../pages/reward/reward';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { EventService } from "../services/event.service";
+import { RewardService } from "../services/reward.service";
 import { HttpModule } from "@angular/http";
 
 import { AngularFireModule } from 'angularfire2'
 import { AngularFireDatabaseModule } from 'angularfire2/database'
+
+import { RewardModel } from '../models/reward.model';
 import { ConcertPage } from '../pages/concert/concert';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { ToastService } from '../services/toast.service';
@@ -41,11 +45,13 @@ import { ToastService } from '../services/toast.service';
     SigninPage,
     SignupPage,
     WalkthroughPage,
+    RewardPage,
     ConcertPage,
     GamePage,
     EventsListPage,
     RatingComponent,
     RatePlayersPage
+
   ],
   imports: [
     BrowserModule,
@@ -64,17 +70,20 @@ import { ToastService } from '../services/toast.service';
     SigninPage,
     SignupPage,
     WalkthroughPage,
+    RewardPage
     ConcertPage,
     GamePage,
     EventsListPage,
     RatingComponent,
     RatePlayersPage
+
   ],
   providers: [
     StatusBar,
     SplashScreen,
     AuthService,
     EventService,
+    RewardService,
     ToastService,
     MatchService,
     AngularFireAuth,

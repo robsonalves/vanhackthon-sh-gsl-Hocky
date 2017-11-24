@@ -16,6 +16,7 @@ export class EventService{
         private toast : ToastService
     ){ }
 
+
     
     getTodaysEvents(){    
         return this.eventsRef;
@@ -51,7 +52,6 @@ export class EventService{
     likeEvent(event : Event){
 
     }
-
 
 
 }
