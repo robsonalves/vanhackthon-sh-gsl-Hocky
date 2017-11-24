@@ -1,3 +1,4 @@
+import { EventsListPage } from './../pages/events-list/events-list';
 import { WalkthroughPage } from './../pages/walkthrough/walkthrough';
 import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform } from 'ionic-angular';
@@ -18,7 +19,7 @@ export class MyApp {
   isAuthenticated: boolean = false;
 
   
-  rootPage: any;// = HomePage;
+  rootPage: any = HomePage;
 
   pages: Array<{title: string, component: any}>;
 
@@ -27,8 +28,8 @@ export class MyApp {
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Home', component: HomePage },
-      { title: 'List', component: ListPage }
+      { title: "Today's Events", component: HomePage },
+      { title: 'All Events', component: EventsListPage }
     ];
 
   }
