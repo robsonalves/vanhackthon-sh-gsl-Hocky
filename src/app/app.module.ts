@@ -31,7 +31,7 @@ import { HttpModule } from "@angular/http";
 import { AngularFireModule } from 'angularfire2'
 import { AngularFireDatabaseModule } from 'angularfire2/database'
 
-import { Reward } from '../models/reward.model';
+import { RewardModel } from '../models/reward.model';
 import { ConcertPage } from '../pages/concert/concert';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { ToastService } from '../services/toast.service';
@@ -51,11 +51,12 @@ import { ToastService } from '../services/toast.service';
     EventsListPage,
     RatingComponent,
     RatePlayersPage
+
   ],
   imports: [
     BrowserModule,
     HttpModule,
-    IonicModule.forRoot(RewardPage),
+    IonicModule.forRoot(MyApp),
 
     AngularFireModule.initializeApp(FIREBASE_CONFIG),
     AngularFireDatabaseModule,
@@ -74,7 +75,8 @@ import { ToastService } from '../services/toast.service';
     GamePage,
     EventsListPage,
     RatingComponent,
-    RatePlayersPage    
+    RatePlayersPage
+
   ],
   providers: [
     StatusBar,
@@ -82,6 +84,7 @@ import { ToastService } from '../services/toast.service';
     AuthService,
     EventService,
     RewardService,
+    ToastService,
     MatchService,
     AngularFireAuth,
     { provide: ErrorHandler, useClass: IonicErrorHandler }

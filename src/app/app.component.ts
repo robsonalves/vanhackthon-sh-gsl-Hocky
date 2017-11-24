@@ -22,10 +22,8 @@ export class MyApp {
 
   isAuthenticated: boolean = false;
 
-
   rootPage: any = HomePage;
   pages: Array<{title: string, component: any}>;
-
 
 
   constructor(public platform: Platform, 
