@@ -1,3 +1,4 @@
+import { RatePlayersPage } from './../pages/rate-players/rate-players';
 import { EventsListPage } from './../pages/events-list/events-list';
 import { WalkthroughPage } from './../pages/walkthrough/walkthrough';
 import { Component, ViewChild } from '@angular/core';
@@ -39,14 +40,19 @@ export class MyApp {
 
   initializeApp() {
     this.platform.ready().then(() => {
+
      
      let authSubscription = this.authService.user$.subscribe(user => {
 
+
         if(user){
+
            this.rootPage = HomePage;
            authSubscription.unsubscribe();
            
-        }else{
+        }
+        else{
+         
           this.rootPage = WalkthroughPage;
           authSubscription.unsubscribe();
         }
