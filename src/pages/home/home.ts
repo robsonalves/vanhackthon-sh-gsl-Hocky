@@ -1,3 +1,4 @@
+import { AuthService } from './../../services/auth.service';
 import { Observable } from 'rxjs/Rx';
 
 import { Component} from '@angular/core';
@@ -18,7 +19,8 @@ export class HomePage {
   
   constructor(
     public navCtrl: NavController,
-    public eventService: EventService
+    public eventService: EventService,
+    public authService : AuthService
   ) {  
 
     this.events$ = this.eventService
@@ -44,6 +46,9 @@ export class HomePage {
 
   onCheckIn(event: Event){
     event.checkedIn = !event.checkedIn;
+
+    let user = this.authService.getActiveUser().email;
+    this.eventService.joinEvent(event, user);
   }
 
 }
