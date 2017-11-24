@@ -30,9 +30,17 @@ import { HttpModule } from "@angular/http";
 
 import { AngularFireModule } from 'angularfire2'
 import { AngularFireDatabaseModule } from 'angularfire2/database'
+<<<<<<< HEAD
 import { Reward } from '../models/reward.model';
 import { ConcertPage } from '../pages/concert/concert';
 import { NavController } from 'ionic-angular/navigation/nav-controller';
+=======
+
+import { RewardModel } from '../models/reward.model';
+import { ConcertPage } from '../pages/concert/concert';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { ToastService } from '../services/toast.service';
+>>>>>>> 8fe918e1be825956f25d28e3e3e0adad04fac687
 
 
 @NgModule({
@@ -49,6 +57,10 @@ import { NavController } from 'ionic-angular/navigation/nav-controller';
     EventsListPage,
     RatingComponent,
     RatePlayersPage
+<<<<<<< HEAD
+=======
+
+>>>>>>> 8fe918e1be825956f25d28e3e3e0adad04fac687
   ],
   imports: [
     BrowserModule,
@@ -56,7 +68,8 @@ import { NavController } from 'ionic-angular/navigation/nav-controller';
     IonicModule.forRoot(RewardPage),
 
     AngularFireModule.initializeApp(FIREBASE_CONFIG),
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    AngularFireAuthModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -66,12 +79,21 @@ import { NavController } from 'ionic-angular/navigation/nav-controller';
     SigninPage,
     SignupPage,
     WalkthroughPage,
+<<<<<<< HEAD
     RewardPage,
+=======
+    RewardPage
+>>>>>>> 8fe918e1be825956f25d28e3e3e0adad04fac687
     ConcertPage,
     GamePage,
     EventsListPage,
     RatingComponent,
+<<<<<<< HEAD
     RatePlayersPage    
+=======
+    RatePlayersPage
+
+>>>>>>> 8fe918e1be825956f25d28e3e3e0adad04fac687
   ],
   providers: [
     StatusBar,
@@ -79,9 +101,14 @@ import { NavController } from 'ionic-angular/navigation/nav-controller';
     AuthService,
     EventService,
     RewardService,
+<<<<<<< HEAD
+=======
+    ToastService,
+>>>>>>> 8fe918e1be825956f25d28e3e3e0adad04fac687
     MatchService,
     AngularFireAuth,
     { provide: ErrorHandler, useClass: IonicErrorHandler }
+
   ]
 })
 export class AppModule { }

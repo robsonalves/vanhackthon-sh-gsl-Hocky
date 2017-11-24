@@ -11,6 +11,7 @@ import { ListPage } from '../pages/list/list';
 import { RewardPage } from '../pages/reward/reward';
 
 import firebase from 'firebase';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   templateUrl: 'app.html'
@@ -20,46 +21,60 @@ export class MyApp {
 
   isAuthenticated: boolean = false;
 
+<<<<<<< HEAD
 
   rootPage: any;// = HomePage;
+=======
+  rootPage: any = HomePage;
+  pages: Array<{title: string, component: any}>;
 
-  pages: Array<{ title: string, component: any }>;
+>>>>>>> 8fe918e1be825956f25d28e3e3e0adad04fac687
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
+  constructor(public platform: Platform, 
+    public statusBar: StatusBar, 
+    public splashScreen: SplashScreen,
+    private authService : AuthService
+  ) {
+
     this.initializeApp();
 
     // used for an example of ngFor and navigation
     this.pages = [
+<<<<<<< HEAD
       { title: 'Home', component: HomePage },
       { title: 'List', component: ListPage },
       { title: 'Reward', component: RewardPage }
+=======
+
+      { title: 'Home', component: HomePage },
+      { title: 'Reward', component: RewardPage },
+      { title: "Today's Events", component: HomePage },
+      { title: 'All Events', component: EventsListPage }
+
+>>>>>>> 8fe918e1be825956f25d28e3e3e0adad04fac687
     ];
 
   }
 
   initializeApp() {
     this.platform.ready().then(() => {
-      // firebase.initializeApp({
-      //   apiKey: "AIzaSyAgPZIz8uvjDWjH5a9uoGmICy-7Yi7P2Ng",
-      //   authDomain: "gslapp-8d198.firebaseapp.com",
-      //   databaseURL: "https://gslapp-8d198.firebaseio.com",
-      //   projectId: "gslapp-8d198",
-      //   storageBucket: "gslapp-8d198.appspot.com",
-      //   messagingSenderId: "1047993594422"
-      // });
 
+     
+     let authSubscription = this.authService.user$.subscribe(user => {
 
-      firebase.auth().onAuthStateChanged(user => {
-        if (user) {
-          this.isAuthenticated = true;
-          this.rootPage = RatePlayersPage;
+        if(user){
+
+           this.rootPage = HomePage;
+           authSubscription.unsubscribe();
+           
         }
-        else {
-          this.isAuthenticated = false;
-          this.rootPage = RewardPage;
+        else{
+         
+          this.rootPage = WalkthroughPage;
+          authSubscription.unsubscribe();
 
         }
-
+       
       })
 
       // Okay, so the platform is ready and our plugins are available.
