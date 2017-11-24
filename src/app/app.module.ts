@@ -25,6 +25,8 @@ import { HttpModule } from "@angular/http";
 import { AngularFireModule } from 'angularfire2'
 import { AngularFireDatabaseModule } from 'angularfire2/database'
 import { ConcertPage } from '../pages/concert/concert';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { ToastService } from '../services/toast.service';
 
 
 @NgModule({
@@ -44,7 +46,8 @@ import { ConcertPage } from '../pages/concert/concert';
     HttpModule,
     IonicModule.forRoot(MyApp),
     AngularFireModule.initializeApp(FIREBASE_CONFIG),
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    AngularFireAuthModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -63,7 +66,8 @@ import { ConcertPage } from '../pages/concert/concert';
     SplashScreen,
     AuthService,
     EventService,
-    { provide: ErrorHandler, useClass: IonicErrorHandler }
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
+    ToastService,
   ]
 })
 export class AppModule { }

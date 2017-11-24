@@ -1,3 +1,4 @@
+import { ToastService } from './toast.service';
 import { Event, EventJoined } from './../models/event.model';
 import { Injectable } from '@angular/core';
 import 'rxjs/Rx'
@@ -10,7 +11,10 @@ export class EventService{
     private eventsRef = this.db.list<Event>('events');
     private eventJoinedRef = this.db.list<EventJoined>('event-joined');
     
-    constructor(private db: AngularFireDatabase){ }
+    constructor(
+        private db: AngularFireDatabase,
+        private toast : ToastService
+    ){ }
 
     
     getTodaysEvents(){    
@@ -35,8 +39,14 @@ export class EventService{
     
     }
 
+    leaveEvent(event : Event, user : string){
+       this.toast.show('You have left this event!');
+
+       
+    }
+
     likeEvent(event : Event){
-        
+
     }
 
 

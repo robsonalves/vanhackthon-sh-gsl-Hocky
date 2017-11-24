@@ -1,3 +1,6 @@
+import { ToastService } from './../../services/toast.service';
+import { SigninPage } from './../signin/signin';
+import { WalkthroughPage } from './../walkthrough/walkthrough';
 import { AuthService } from './../../services/auth.service';
 import { Observable } from 'rxjs/Rx';
 
@@ -20,7 +23,8 @@ export class HomePage {
   constructor(
     public navCtrl: NavController,
     public eventService: EventService,
-    public authService : AuthService
+    public authService : AuthService,
+    public toast : ToastService
   ) {  
 
     this.events$ = this.eventService
@@ -29,8 +33,15 @@ export class HomePage {
       .map(changes => {
           return changes.map(c => ({
                   key : c.payload.key, ...c.payload.val()
-                }))
-              });
+          }))
+      });
+
+      //check for authentication
+      this.authService.user$.subscribe(user => {
+        if(user) return;
+
+        this.navCtrl.setRoot(SigninPage)
+      })
     
   }
 
@@ -46,9 +57,21 @@ export class HomePage {
 
   onCheckIn(event: Event){
     event.checkedIn = !event.checkedIn;
-
     let user = this.authService.getActiveUser().email;
-    this.eventService.joinEvent(event, user);
+
+    if(user){
+        
+      if (event.checkedIn){
+        this.eventService.joinEvent(event, user);
+        this.toast.show(`You have joined the ${event.name} event!!`)
+
+      }else{
+        this.eventService.leaveEvent(event, user);
+      }
+    }else{
+      this.navCtrl.setRoot(SigninPage)
+    }
+  
   }
 
 }

@@ -9,6 +9,7 @@ import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 
 import firebase from 'firebase';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   templateUrl: 'app.html'
@@ -17,13 +18,15 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   isAuthenticated: boolean = false;
-
-  
   rootPage: any = HomePage;
-
   pages: Array<{title: string, component: any}>;
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
+  constructor(public platform: Platform, 
+    public statusBar: StatusBar, 
+    public splashScreen: SplashScreen,
+    private authService : AuthService
+  ) {
+
     this.initializeApp();
 
     // used for an example of ngFor and navigation
@@ -36,29 +39,20 @@ export class MyApp {
 
   initializeApp() {
     this.platform.ready().then(() => {
-      firebase.initializeApp({
-        apiKey: "AIzaSyAgPZIz8uvjDWjH5a9uoGmICy-7Yi7P2Ng",
-        authDomain: "gslapp-8d198.firebaseapp.com",
-        databaseURL: "https://gslapp-8d198.firebaseio.com",
-        projectId: "gslapp-8d198",
-        storageBucket: "gslapp-8d198.appspot.com",
-        messagingSenderId: "1047993594422"
-      });
+     
+     let authSubscription = this.authService.user$.subscribe(user => {
 
-
-      firebase.auth().onAuthStateChanged(user =>{
         if(user){
-          this.isAuthenticated = true;
-          this.rootPage = HomePage;
-        }
-        else{
-          this.isAuthenticated = false;
+           this.rootPage = HomePage;
+           authSubscription.unsubscribe();
+           
+        }else{
           this.rootPage = WalkthroughPage;
-
+          authSubscription.unsubscribe();
         }
-
+       
       })
-      
+
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
       this.statusBar.styleDefault();

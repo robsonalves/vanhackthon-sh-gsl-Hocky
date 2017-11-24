@@ -22,7 +22,7 @@ export class GamePage {
   }
 
   join(){
-    this.eventService.joinEvent();
+    // this.eventService.joinEvent();
   }
 
 }
