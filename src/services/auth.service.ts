@@ -5,6 +5,10 @@ import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class AuthService{
+    constructor(
+        public firebase: AngularFireAuth
+    ){}
+    
     isAuthenticated: boolean = false;
     user$: Observable<firebase.User>;
 
@@ -15,33 +19,33 @@ export class AuthService{
     
     
     singup(email: string, password: string){
-        return firebase.auth().createUserWithEmailAndPassword(email,password);
+        return this.firebase.auth.createUserWithEmailAndPassword(email,password);
     }
 
     signin(email: string, password: string){
-        return firebase.auth().signInWithEmailAndPassword(email,password);
+        return this.firebase.auth.signInWithEmailAndPassword(email,password);
     }
 
     signinWhitgGoogle(){        
-        let googleProvide = new firebase.auth.GoogleAuthProvider();
-        return firebase.auth().signInWithRedirect(googleProvide);
+        
+        return this.firebase.auth.signInWithRedirect(new fire.auth.GoogleAuthProvider());
     }
 
     signinWithFacebook(){
-        let facebookProvide = new firebase.auth.FacebookAuthProvider();
-        return firebase.auth().signInWithRedirect(facebookProvide).then(function() {
-            firebase.auth().getRedirectResult()
+        return this.firebase.auth.signInWithRedirect(new fire.auth.FacebookAuthProvider()).then(function() {
+            this.firebase.auth.getRedirectResult()
           });
+        
         
         
     }
 
     logout(){
-        firebase.auth().signOut();
+        this.firebase.auth.signOut();
     }
 
 
     getActiveUser(){
-        return firebase.auth().currentUser;
+        return this.firebase.auth.currentUser;
     }
 }
