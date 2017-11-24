@@ -12,6 +12,7 @@ import { RewardPage } from '../pages/reward/reward';
 
 import firebase from 'firebase';
 import { AuthService } from '../services/auth.service';
+import { SigninPage } from '../pages/signin/signin';
 
 @Component({
   templateUrl: 'app.html'
@@ -76,5 +77,12 @@ export class MyApp {
     // Reset the content nav to have just this page
     // we wouldn't want the back button to show in this scenario
     this.nav.setRoot(page.component);
+  }
+
+  logOut(){
+    this.authService.logout();
+    this.nav.push(SigninPage);
+    
+    this.nav.setRoot(SigninPage);
   }
 }
