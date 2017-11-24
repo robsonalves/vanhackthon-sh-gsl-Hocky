@@ -12,6 +12,7 @@ import { RewardPage } from '../pages/reward/reward';
 
 import firebase from 'firebase';
 import { AuthService } from '../services/auth.service';
+import { SigninPage } from '../pages/signin/signin';
 
 @Component({
   templateUrl: 'app.html'
@@ -21,14 +22,11 @@ export class MyApp {
 
   isAuthenticated: boolean = false;
 
-<<<<<<< HEAD
 
-  rootPage: any;// = HomePage;
-=======
   rootPage: any = HomePage;
   pages: Array<{title: string, component: any}>;
 
->>>>>>> 8fe918e1be825956f25d28e3e3e0adad04fac687
+
 
   constructor(public platform: Platform, 
     public statusBar: StatusBar, 
@@ -40,18 +38,11 @@ export class MyApp {
 
     // used for an example of ngFor and navigation
     this.pages = [
-<<<<<<< HEAD
-      { title: 'Home', component: HomePage },
-      { title: 'List', component: ListPage },
-      { title: 'Reward', component: RewardPage }
-=======
 
-      { title: 'Home', component: HomePage },
-      { title: 'Reward', component: RewardPage },
       { title: "Today's Events", component: HomePage },
-      { title: 'All Events', component: EventsListPage }
-
->>>>>>> 8fe918e1be825956f25d28e3e3e0adad04fac687
+      { title: 'All Events', component: EventsListPage },
+      { title: 'Rewards', component: RewardPage },
+      { title: 'Rate Players', component: RatePlayersPage },
     ];
 
   }
@@ -88,5 +79,12 @@ export class MyApp {
     // Reset the content nav to have just this page
     // we wouldn't want the back button to show in this scenario
     this.nav.setRoot(page.component);
+  }
+
+  logOut(){
+    this.authService.logout();
+    this.nav.push(SigninPage);
+    
+    this.nav.setRoot(SigninPage);
   }
 }

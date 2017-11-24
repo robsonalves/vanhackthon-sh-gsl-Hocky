@@ -2,6 +2,7 @@ import { AuthService } from './../../services/auth.service';
 import { Component } from '@angular/core';
 import { NavController, NavParams, LoadingController, AlertController } from 'ionic-angular';
 import { FormControl } from "@angular/forms/src/model";
+import { HomePage } from '../home/home';
 
 @Component({
   selector: 'page-signin',
@@ -21,7 +22,11 @@ export class SigninPage {
     load.present();
     
     this.auth.signin(f.value.email,f.value.password)
-      .then( () => load.dismiss())
+      .then( () => {
+        load.dismiss(); 
+        this.navCtrl.push(HomePage); 
+        this.navCtrl.setRoot(HomePage)
+      })
       .catch( (error)=> {
         load.dismiss();
         this.handleError(error.message);
@@ -35,7 +40,11 @@ export class SigninPage {
     let load = this.handleLoading();
     load.present();
     this.auth.signinWhitgGoogle()
-      .then( ()=> load.dismiss())
+      .then( () => {
+        load.dismiss(); 
+        this.navCtrl.push(HomePage); 
+        this.navCtrl.setRoot(HomePage)
+      })
       .catch( (error)=> {
         load.dismiss();
         this.handleError(error.message)
@@ -47,7 +56,11 @@ export class SigninPage {
     let load = this.handleLoading();
     load.present();
     this.auth.signinWithFacebook()
-      .then( ()=> load.dismiss())
+      .then( ()=> {
+        load.dismiss(); 
+        this.navCtrl.push(HomePage); 
+        this.navCtrl.setRoot(HomePage)
+      })
       .catch( (error)=> {
         load.dismiss();
         this.handleError(error.message)
