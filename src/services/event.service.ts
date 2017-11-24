@@ -40,9 +40,11 @@ export class EventService{
     }
 
     leaveEvent(event : Event, user : string){
-       this.toast.show('You have left this event!');
 
-       
+       var eventToLeave = this.db.list('/event-joined', 
+                    ref => ref.orderByChild('eventKey').equalTo(event.key)
+                              .orderByChild('username').equalTo(user));
+     
     }
 
     likeEvent(event : Event){
