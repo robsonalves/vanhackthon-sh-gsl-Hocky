@@ -1,3 +1,9 @@
+import { MatchService } from './../services/match.service';
+import { RatePlayersPage } from './../pages/rate-players/rate-players';
+import { RatingComponent } from './../components/rating/rating';
+import { AngularFireAuth } from 'angularfire2/auth';
+import { EventsListPage } from './../pages/events-list/events-list';
+import { GamePage } from './../pages/game/game';
 
 import { AuthService } from './../services/auth.service';
 import { WalkthroughPage } from './../pages/walkthrough/walkthrough';
@@ -24,7 +30,12 @@ import { HttpModule } from "@angular/http";
 
 import { AngularFireModule } from 'angularfire2'
 import { AngularFireDatabaseModule } from 'angularfire2/database'
+
 import { RewardModel } from '../models/reward.model';
+import { ConcertPage } from '../pages/concert/concert';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { ToastService } from '../services/toast.service';
+
 
 @NgModule({
   declarations: [
@@ -34,14 +45,22 @@ import { RewardModel } from '../models/reward.model';
     SigninPage,
     SignupPage,
     WalkthroughPage,
-    RewardPage
+    RewardPage,
+    ConcertPage,
+    GamePage,
+    EventsListPage,
+    RatingComponent,
+    RatePlayersPage
+
   ],
   imports: [
     BrowserModule,
     HttpModule,
     IonicModule.forRoot(MyApp),
+
     AngularFireModule.initializeApp(FIREBASE_CONFIG),
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    AngularFireAuthModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -52,6 +71,12 @@ import { RewardModel } from '../models/reward.model';
     SignupPage,
     WalkthroughPage,
     RewardPage
+    ConcertPage,
+    GamePage,
+    EventsListPage,
+    RatingComponent,
+    RatePlayersPage
+
   ],
   providers: [
     StatusBar,
@@ -59,7 +84,11 @@ import { RewardModel } from '../models/reward.model';
     AuthService,
     EventService,
     RewardService,
+    ToastService,
+    MatchService,
+    AngularFireAuth,
     { provide: ErrorHandler, useClass: IonicErrorHandler }
+
   ]
 })
 export class AppModule { }

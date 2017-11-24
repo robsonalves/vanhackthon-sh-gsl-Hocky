@@ -19,5 +19,81 @@
         
     }
     
-]
+],
+
+"match":    
+    {
+        "referee":"test",
+        "team1":
+            {
+                "name":"Pittsburgh Penguins",
+                "imgUrl": "./assets/imgs/penguins.png", 
+                "chief":"Rafael Reis",
+                "players":[
+                    {
+                        "name": "Josh Archibald",
+                        "number": "45",
+                        "position": "RW",
+                        "Age": "25",
+                        "imgUrl": "./assets/imgs/players/JoshArchibald.jpg",        
+                        "shoot": "Right"
+                    },
+                    {
+                        "name": "Sidney Crosby",
+                        "number": "87",
+                        "position": "C",
+                        "Age": "30",
+                        "imgUrl": "./assets/imgs/players/SidneyCrosby.jpg",        
+                        "shoot": "Left"
+                    },
+                    {
+                        "name": "Jake Guentzel ",
+                        "number": "59",
+                        "position": "C",
+                        "Age": "23",
+                        "imgUrl": "./assets/imgs/players/JakeGuentzel.jpg",        
+                        "shoot": "Left"
+                    }
+                ]
+
+            },
+        "team2":
+            {
+                "name":"Toronto maple Leaf",
+                "imgUrl": "./assets/imgs/toronto.png",        
+                "chief":"Rafael Reis",
+                "players":[
+                    {
+                        "name": "Tyler Bozak",
+                        "number": "42",
+                        "position": "C",
+                        "age": "31",
+                        "imgUrl": "./assets/imgs/players/TylerBozak.jpg",        
+                        "shoot": "Right"
+                    },
+                    {
+                        "name": "Connor Brown",
+                        "number": "28",
+                        "position": "RW",
+                        "age": "23",
+                        "imgUrl": "./assets/imgs/players/ConnorBrown.jpg",        
+                        "shoot": "Left"
+                    },
+                    {
+                        "name": "Zach Hyman",
+                        "number": "11",
+                        "position": "C",
+                        "age": "25",
+                        "imgUrl": "./assets/imgs/players/ZachHyman.jpg",        
+                        "shoot": "Right"
+                    }
+                ]
+
+            }
+            
+
+        
+    }
+
+
 }

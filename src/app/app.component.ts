@@ -1,3 +1,5 @@
+import { RatePlayersPage } from './../pages/rate-players/rate-players';
+import { EventsListPage } from './../pages/events-list/events-list';
 import { WalkthroughPage } from './../pages/walkthrough/walkthrough';
 import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform } from 'ionic-angular';
@@ -9,6 +11,7 @@ import { ListPage } from '../pages/list/list';
 import { RewardPage } from '../pages/reward/reward';
 
 import firebase from 'firebase';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   templateUrl: 'app.html'
@@ -18,46 +21,49 @@ export class MyApp {
 
   isAuthenticated: boolean = false;
 
+  rootPage: any = HomePage;
+  pages: Array<{title: string, component: any}>;
 
-  rootPage: any;// = HomePage;
 
-  pages: Array<{ title: string, component: any }>;
+  constructor(public platform: Platform, 
+    public statusBar: StatusBar, 
+    public splashScreen: SplashScreen,
+    private authService : AuthService
+  ) {
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
     this.pages = [
+
       { title: 'Home', component: HomePage },
-      { title: 'List', component: ListPage },
-      { title: 'Reward', component: RewardPage }
+      { title: 'Reward', component: RewardPage },
+      { title: "Today's Events", component: HomePage },
+      { title: 'All Events', component: EventsListPage }
+
     ];
 
   }
 
   initializeApp() {
     this.platform.ready().then(() => {
-      firebase.initializeApp({
-        apiKey: "AIzaSyAgPZIz8uvjDWjH5a9uoGmICy-7Yi7P2Ng",
-        authDomain: "gslapp-8d198.firebaseapp.com",
-        databaseURL: "https://gslapp-8d198.firebaseio.com",
-        projectId: "gslapp-8d198",
-        storageBucket: "gslapp-8d198.appspot.com",
-        messagingSenderId: "1047993594422"
-      });
 
+     
+     let authSubscription = this.authService.user$.subscribe(user => {
 
-      firebase.auth().onAuthStateChanged(user => {
-        if (user) {
-          this.isAuthenticated = true;
-          this.rootPage = HomePage;
+        if(user){
+
+           this.rootPage = HomePage;
+           authSubscription.unsubscribe();
+           
         }
-        else {
-          this.isAuthenticated = false;
-          this.rootPage = RewardPage;
+        else{
+         
+          this.rootPage = WalkthroughPage;
+          authSubscription.unsubscribe();
 
         }
-
+       
       })
 
       // Okay, so the platform is ready and our plugins are available.

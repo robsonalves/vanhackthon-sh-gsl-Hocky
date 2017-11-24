@@ -8,7 +8,7 @@
 </ion-header>
 
 <ion-content padding>    
-  <ion-card  *ngFor="let event of events">
+  <ion-card  *ngFor="let event of events$ | async">
       <img [src]="event.imgUrl"/>
       <ion-card-content>
         <ion-card-title >
@@ -16,7 +16,7 @@
         </ion-card-title>
         <p>
             {{event.description}}
-        </p>
+        </p>         
       </ion-card-content>
       <ion-row no-padding>
         <ion-col no-padding width-30 text-left>
