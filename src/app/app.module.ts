@@ -70,7 +70,7 @@ import { ToastService } from '../services/toast.service';
     SigninPage,
     SignupPage,
     WalkthroughPage,
-    RewardPage
+    RewardPage,
     ConcertPage,
     GamePage,
     EventsListPage,
