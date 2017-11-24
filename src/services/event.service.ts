@@ -44,6 +44,7 @@ export class EventService{
        var eventToLeave = this.db.list('/event-joined', 
                     ref => ref.orderByChild('eventKey').equalTo(event.key)
                               .orderByChild('username').equalTo(user));
+        
      
     }
 
