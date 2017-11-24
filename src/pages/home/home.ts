@@ -1,8 +1,9 @@
+import { Observable } from 'rxjs/Rx';
 
-import { Component, OnInit } from '@angular/core';
+import { Component} from '@angular/core';
 import { IonicPage } from 'ionic-angular/navigation/ionic-page';
 import { NavController } from 'ionic-angular';
-import { EventModel } from "../../models/event.model";
+import { Event } from "../../models/event.model";
 import { EventService } from "../../services/event.service";
 
 @IonicPage()
@@ -11,25 +12,27 @@ import { EventService } from "../../services/event.service";
   templateUrl: 'home.html'
 })
 
-export class HomePage implements OnInit {
-  events: EventModel[] = [];
-  
+export class HomePage {
+
+  events: Observable<Event[]>;
+
   constructor(
     public navCtrl: NavController,
     public eventService: EventService
   ) {  }
 
   ngOnInit(){   
-    this.eventService.getTodaysEvents()
-      .subscribe(
-        (data) => {
-          this.events = data,
-          console.log(data)
-        }
-      )
+    // this.eventService.getTodaysEvents()
+    //   .subscribe(
+    //     (data) => {
+    //       this.events = data,
+    //       console.log(data)
+    //     }
+    //   )
   }
 
-  onLike(event: EventModel){
+
+  onLike(event: Event){
     event.liked = !event.liked;    
     if (event.liked)
       event.likes ++;    
@@ -38,7 +41,7 @@ export class HomePage implements OnInit {
     
   }
 
-  onCheckIn(event: EventModel){
+  onCheckIn(event: Event){
     event.checkedIn = !event.checkedIn;
   }
 

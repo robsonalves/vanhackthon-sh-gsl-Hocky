@@ -1,8 +1,7 @@
-export class RewardModel {
-    constructor(
-        public date: Date,
-        public point: number,
-        public place: string
-    )
-     { }
+import { Player } from './player.model';
+
+export interface Reward extends Player {
+    date: Date,
+    point: number,
+    place: string
 }
