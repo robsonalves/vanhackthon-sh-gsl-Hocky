@@ -8,32 +8,16 @@
 </ion-header>
 
 <ion-content padding>
-    <div class="total-rewards">
-        <h1>Total Points:
-            <span>60</span>
-        </h1>
+    <h1> My rewards - Details</h1>
+    <div class="row header">
+        <div class="col">Date</div>
+        <div class="col">Points</div>
+        <div class="col">Place</div>
     </div>
-    <hr>
-    <div>
-        <h1> My rewards - Details</h1>
-        <div class="row header">
-            <div class="col">Date</div>
-            <div class="col">Points</div>
-            <div class="col">Place</div>
-        </div>
-        <div class="row" *ngFor="let reward of rewards">
-            <div class="col">{{reward.date}}</div>
-            <div class="col">{{reward.point}}</div>
-            <div class="col">{{reward.place}}</div>
-        </div>
+    <div class="row" *ngFor="let reward of rewards">
+        <div class="col">{{reward.date}}</div>
+        <div class="col">{{reward.point}}</div>
+        <div class="col">{{reward.place}}</div>
     </div>
-    <hr>
-    <div class="row">
-        Reward List
-    </div>
-    <div class="row">
-        <h1>--Sample Idea --</h1>
-        <img src="../assets/imgs/reward-1.jpg" width="100%" />
-    </div>
-
 </ion-content>
+
