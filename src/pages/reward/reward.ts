@@ -1,28 +1,28 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import { EventService } from '../../services/event.service';
-import { RewardModel } from '../../models/event.model';
+import { RewardService } from '../../services/reward.service';
+import { RewardModel } from '../../models/reward.model';
 
 @Component({
   selector: 'page-list',
   templateUrl: 'reward.html'
 })
 export class RewardPage implements OnInit {
-  reward: RewardModel[] = [];
+  rewards: RewardModel[] = [];
 
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
-    public eventService: EventService
+    public rewardService: RewardService
   ) { }
 
 
   ngOnInit() {
-    this.eventService.getMyRewards()
+    this.rewardService.getMyRewards()
       .subscribe(
       (data) => 
       {
-        this.reward = data,
+        this.rewards = data,
         console.log(data);
       })
   }

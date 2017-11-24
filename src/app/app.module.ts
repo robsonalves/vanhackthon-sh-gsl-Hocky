@@ -19,10 +19,12 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { EventService } from "../services/event.service";
+import { RewardService } from "../services/reward.service";
 import { HttpModule } from "@angular/http";
 
 import { AngularFireModule } from 'angularfire2'
 import { AngularFireDatabaseModule } from 'angularfire2/database'
+import { RewardModel } from '../models/reward.model';
 
 @NgModule({
   declarations: [
@@ -56,6 +58,7 @@ import { AngularFireDatabaseModule } from 'angularfire2/database'
     SplashScreen,
     AuthService,
     EventService,
+    RewardService,
     { provide: ErrorHandler, useClass: IonicErrorHandler }
   ]
 })

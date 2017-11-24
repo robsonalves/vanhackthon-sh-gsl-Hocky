@@ -13,15 +13,11 @@
         <div class="col">Date</div>
         <div class="col">Points</div>
         <div class="col">Place</div>
-        <div class="col"></div>
     </div>
-    <div class="row" ng-repeat="data in reward">
-        <div class="col">{{reward[0].date}}</div>
-        <div class="col">{{reward[0].point}}</div>
-        <div class="col">{{reward[0].place}}</div>
-        <div class="col">
-            <button class="button" ng-click="ctrl.add($index)">Add</button>
-        </div>
+    <div class="row" *ngFor="let reward of rewards">
+        <div class="col">{{reward.date}}</div>
+        <div class="col">{{reward.point}}</div>
+        <div class="col">{{reward.place}}</div>
     </div>
 </ion-content>
 

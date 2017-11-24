@@ -12,7 +12,7 @@ export class EventService{
     getTodaysEvents(){
         return this.http.get('assets/data-samples.json')
             .map(respose => respose.json().events)
-    }    
+    }
     
     getMyRewards(){
         return this.http.get('assets/data-rewards-samples.json')
