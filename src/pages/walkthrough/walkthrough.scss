@@ -15,14 +15,9 @@ page-walkthrough {
     }
 
     .walkthrough-content{        
-        background-color: $theme-color-3;
+        background-color: $white;
         .scroll-content{
             overflow: hidden;
-        }
-        .img
-        {
-            width:90%;            
-            height:80%;
         }
     }
 
