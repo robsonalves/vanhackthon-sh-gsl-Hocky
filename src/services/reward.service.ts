@@ -3,6 +3,7 @@ import { Http } from '@angular/http';
 import 'rxjs/Rx'
 import { AngularFireDatabase } from 'angularfire2/database';
 import { RewardModel } from './../models/reward.model'
+import { pointerCoord } from 'ionic-angular/util/dom';
 
 @Injectable()
 export class RewardService {
@@ -14,7 +15,7 @@ export class RewardService {
         private db: AngularFireDatabase
     ) { }
 
-    getMyRewards() {
+    getRewardsDetails() {
        return this.rewardsRef;
     }
 }
