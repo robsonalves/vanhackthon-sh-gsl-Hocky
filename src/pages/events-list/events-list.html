@@ -1,21 +1,13 @@
-
 <ion-header>
-    
-      <ion-navbar >
-        <ion-title>All Events</ion-title>
-        <ion-buttons end>
-          <button ion-button (click)="goHome()">
-            <ion-icon name="home"></ion-icon>
-          </button>
-        </ion-buttons>
-      </ion-navbar>
-    
-    </ion-header>
-    
-    <ion-tabs>
-        <ion-tab tabTitle="NFL Games"  [root]="gamesTab"
-           tabIcon="basketball"></ion-tab>
-  
-        <ion-tab tabTitle="Concerts" [root]="concertTab"
-             tabIcon="podium"></ion-tab>
-    </ion-tabs>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>All Events</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-tabs>
+  <ion-tab tabTitle="NFL Games" [root]="gamesTab" tabIcon="shirt"></ion-tab>
+  <ion-tab tabTitle="Concerts" [root]="concertTab" tabIcon="microphone"></ion-tab>
+</ion-tabs>
