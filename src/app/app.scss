@@ -14,3 +14,42 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+.item-md
+{
+    padding: 0;
+}
+
+.button-sign
+{
+    border: 2px solid #9b9b9b;
+    color: #9b9b9b;
+    background-color: $white;
+}
+
+.button-sign:hover
+{
+    border: 2px solid $theme-color-4;
+    color: $theme-color-4;
+    background-color: $white !important;
+}
+
+.bg-white
+{
+    background-color: $white;
+}
+
+.mt-5p
+{
+    margin-top: 5%;
+}
+
+.mt-20p
+{
+    margin-top: 20%;
+}
+
+.mt-40p
+{
+    margin-top: 40%;
+}
