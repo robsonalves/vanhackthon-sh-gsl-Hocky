@@ -15,14 +15,20 @@ export class AuthService{
         this.user$ = afAuth.authState;
     }
     
-    
-    
     singup(email: string, password: string){
         return this.firebase.auth.createUserWithEmailAndPassword(email,password);
     }
 
     signin(email: string, password: string){
         return this.firebase.auth.signInWithEmailAndPassword(email,password);
+    }
+
+    sendPasswordReset(email: string){
+        return this.firebase.auth.sendPasswordResetEmail(email);
+    }
+
+    confirmPasswordReset(code: string, newPassword: string){
+        return this.firebase.auth.confirmPasswordReset(code, newPassword);
     }
 
     signinWhitgGoogle(){        
