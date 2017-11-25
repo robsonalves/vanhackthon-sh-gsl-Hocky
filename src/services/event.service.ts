@@ -16,8 +16,6 @@ export class EventService{
         private toast : ToastService
     ){ }
 
-
-    
     getTodaysEvents(){    
         return this.eventsRef;
     }
@@ -37,7 +35,6 @@ export class EventService{
       eventToJoin.username = user;
 
       return this.eventJoinedRef.push(eventToJoin);
-    
     }
 
     leaveEvent(event : Event, user : string){
@@ -45,12 +42,9 @@ export class EventService{
        var eventToLeave = this.db.list('/event-joined', 
                     ref => ref.orderByChild('eventKey').equalTo(event.key)
                               .orderByChild('username').equalTo(user));
-        
-     
     }
 
     likeEvent(event : Event){
-
     }
 
 

@@ -14,7 +14,7 @@
         <div class="col">Points</div>
         <div class="col">Place</div>
     </div>
-    <div class="row" *ngFor="let reward of rewards">
+    <div class="row" *ngFor="let reward of rewards$ | async">
         <div class="col">{{reward.date}}</div>
         <div class="col">{{reward.point}}</div>
         <div class="col">{{reward.place}}</div>
