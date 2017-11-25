@@ -39,7 +39,7 @@ export class MyApp {
       { title: "Today's Events", component: HomePage },
       { title: 'All Events', component: EventsListPage },
       { title: 'Rewards', component: RewardPage },
-      { title: 'Rate Players', component: RatePlayersPage },
+      { title: 'Rate Game and Players', component: RatePlayersPage },
     ];
 
   }
