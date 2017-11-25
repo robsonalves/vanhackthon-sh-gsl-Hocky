@@ -15,8 +15,6 @@ export class AuthService{
         this.user$ = afAuth.authState;
     }
     
-    
-    
     singup(email: string, password: string){
         return this.firebase.auth.createUserWithEmailAndPassword(email,password);
     }
@@ -34,9 +32,6 @@ export class AuthService{
         return this.firebase.auth.signInWithRedirect(new firebase.auth.FacebookAuthProvider()).then(function() {
             this.firebase.auth.getRedirectResult()
           });
-        
-        
-        
     }
 
     logout(){
