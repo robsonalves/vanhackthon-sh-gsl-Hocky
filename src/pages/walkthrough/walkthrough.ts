@@ -1,7 +1,10 @@
 import { Component, ViewChild } from '@angular/core';
-import { Slides, NavController } from "ionic-angular";
 import { SignupPage } from './../signup/signup';
 import { SigninPage } from './../signin/signin';
+import { AuthService } from './../../services/auth.service';
+import { NavController, NavParams, LoadingController, AlertController } from 'ionic-angular';
+import { FormControl } from "@angular/forms/src/model";
+import { HomePage } from '../home/home';
 
 @Component({
   selector: 'page-walkthrough',
@@ -12,29 +15,74 @@ export class WalkthroughPage {
   lastSlide: boolean;
 
   constructor(
-    private nav:NavController
-  ){}
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    public auth: AuthService,
+    public loadCtrl: LoadingController,
+    public alertCtrl: AlertController
+  ) { }
 
+  onSubmit(f: FormControl) {
+    let load = this.handleLoading();
+    load.present();
 
-  @ViewChild('slider') slider: Slides;
-
-  skipIntro() {   
-    this.lastSlide = true;
-    this.slider.slideTo(this.slider.length());
+    this.auth.signin(f.value.email, f.value.password)
+      .then(() => {
+        load.dismiss();
+        this.navCtrl.push(HomePage);
+        this.navCtrl.setRoot(HomePage)
+      })
+      .catch((error) => {
+        load.dismiss();
+        this.handleError(error.message);
+      }
+      );
   }
 
-  onSlideChanged() {
-    this.lastSlide = this.slider.isEnd();
+  loginWithGoogle() {
+    let load = this.handleLoading();
+    load.present();
+    this.auth.signinWhitgGoogle()
+      .then(() => {
+        load.dismiss();
+        this.navCtrl.push(HomePage);
+        this.navCtrl.setRoot(HomePage)
+      })
+      .catch((error) => {
+        load.dismiss();
+        this.handleError(error.message)
+      });
   }
 
-  goToLogin() {
-    this.nav.push(SigninPage);
+
+  loginWithFacebook() {
+    let load = this.handleLoading();
+    load.present();
+    this.auth.signinWithFacebook()
+      .then(() => {
+        load.dismiss();
+        this.navCtrl.push(HomePage);
+        this.navCtrl.setRoot(HomePage)
+      })
+      .catch((error) => {
+        load.dismiss();
+        this.handleError(error.message)
+      });
   }
 
-  goToSignup() {
-    this.nav.push(SignupPage);
+  handleError(message: string) {
+    const alert = this.alertCtrl.create({
+      title: 'Sing in Error .',
+      message: message,
+      buttons: ['Ok']
+    });
+    alert.present();
   }
 
- 
+  handleLoading() {
+    return this.loadCtrl.create({
+      content: "Wait..."
+    });
+  }
 
 }
