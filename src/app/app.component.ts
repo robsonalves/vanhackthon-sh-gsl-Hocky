@@ -59,7 +59,7 @@ export class MyApp {
         }
         else{
          
-          this.rootPage = RewardPage;
+          this.rootPage = WalkthroughPage;
           authSubscription.unsubscribe();
 
         }
