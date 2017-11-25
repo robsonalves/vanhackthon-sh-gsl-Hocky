@@ -36,6 +36,7 @@ import { RewardModel } from '../models/reward.model';
 import { ConcertPage } from '../pages/concert/concert';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { ToastService } from '../services/toast.service';
+import { RewardDetailsPage } from '../pages/reward-details/reward-details';
 
 
 @NgModule({
@@ -48,12 +49,12 @@ import { ToastService } from '../services/toast.service';
     ResetPasswordPage,
     ResetPasswordCodePage,
     RewardPage,
+    RewardDetailsPage,
     ConcertPage,
     GamePage,
     EventsListPage,
     RatingComponent,
     RatePlayersPage
-
   ],
   imports: [
     BrowserModule,
@@ -74,6 +75,7 @@ import { ToastService } from '../services/toast.service';
     ResetPasswordPage,
     ResetPasswordCodePage,
     RewardPage,
+    RewardDetailsPage,
     ConcertPage,
     GamePage,
     EventsListPage,

@@ -40,9 +40,6 @@ export class AuthService{
         return this.firebase.auth.signInWithRedirect(new firebase.auth.FacebookAuthProvider()).then(function() {
             this.firebase.auth.getRedirectResult()
           });
-        
-        
-        
     }
 
     logout(){

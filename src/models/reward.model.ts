@@ -1,8 +1,6 @@
-export class RewardModel {
-    constructor(
-        public date: Date,
-        public point: number,
-        public place: string
-    )
-     { }
+export interface RewardModel {
+    key? : string,
+    date: Date,
+    point: number,
+    place: string
 }
