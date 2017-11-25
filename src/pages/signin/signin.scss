@@ -1,3 +1,44 @@
-page-signin {
+page-sign-in {       
+    .sign-in-header
+	{
+        .skip-button
+        {
+            color:$theme-color-1;
+            font-size: 13px
+        }
 
+        .toolbar-background
+        {  
+            background-color: $theme-color-3;
+            border: none !important;
+        }
+    }
+
+    .sign-in-content{        
+        background-color: $white;
+        .scroll-content{
+            overflow: hidden;
+        }
+    }
+
+    .main-title
+    {
+        margin: 35px 20px 20px;
+        font-size: 3.4rem;
+        font-weight: 900;
+        font-style: italic;
+        text-align: center;
+        color: $theme-color-2;
+        ;
+    }
+
+    .intro-text
+    {
+        margin: 0px 20%;
+        font-size: 1.4rem;
+        line-height: 1.35;
+        text-align: center;
+        color: $theme-color-2;
+    }
+    
 }

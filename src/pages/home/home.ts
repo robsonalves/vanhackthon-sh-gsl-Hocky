@@ -1,6 +1,5 @@
 import { ToastService } from './../../services/toast.service';
 import { SigninPage } from './../signin/signin';
-import { WalkthroughPage } from './../walkthrough/walkthrough';
 import { AuthService } from './../../services/auth.service';
 import { Observable } from 'rxjs/Rx';
 

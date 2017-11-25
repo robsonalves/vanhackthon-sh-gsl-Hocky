@@ -23,6 +23,14 @@ export class AuthService{
         return this.firebase.auth.signInWithEmailAndPassword(email,password);
     }
 
+    sendPasswordReset(email: string){
+        return this.firebase.auth.sendPasswordResetEmail(email);
+    }
+
+    confirmPasswordReset(code: string, newPassword: string){
+        return this.firebase.auth.confirmPasswordReset(code, newPassword);
+    }
+
     signinWhitgGoogle(){        
         
         return this.firebase.auth.signInWithRedirect(new firebase.auth.GoogleAuthProvider());

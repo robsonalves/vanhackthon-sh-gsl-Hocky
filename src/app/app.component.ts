@@ -1,6 +1,5 @@
 import { RatePlayersPage } from './../pages/rate-players/rate-players';
 import { EventsListPage } from './../pages/events-list/events-list';
-import { WalkthroughPage } from './../pages/walkthrough/walkthrough';
 import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
@@ -59,7 +58,7 @@ export class MyApp {
         }
         else{
          
-          this.rootPage = WalkthroughPage;
+          this.rootPage = SigninPage;
           authSubscription.unsubscribe();
 
         }
