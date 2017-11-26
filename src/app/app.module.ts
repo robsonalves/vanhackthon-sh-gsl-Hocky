@@ -42,6 +42,7 @@ import { EventListService } from '../services/event-list.service';
 import { AuthService } from './../services/auth.service';
 import { LoadingService } from '../services/loading.service';
 import { SelfiePage } from '../pages/selfie/selfie';
+import { PopupService } from '../services/popup.service';
 
 
 @NgModule({
