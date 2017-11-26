@@ -4,6 +4,9 @@ import { EventService } from '../../services/event.service';
 import { EventListService } from '../../services/event-list.service';
 import { Observable } from 'rxjs/Observable';
 import { EventList } from '../../models/eventlist.model';
+import { Event } from '../../models/event.model';
+import { EarnService } from '../../services/earn.service';
+import { ToastService } from '../../services/toast.service';
 
 @IonicPage()
 @Component({
@@ -17,7 +20,10 @@ export class GamePage {
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams,
-   public eventlistService : EventListService) {
+    private eventlistService : EventListService,
+    private EventService: EventService,
+    private earnService: EarnService,
+    private toast: ToastService) {
 
     this.getData();
   }
@@ -40,6 +46,22 @@ export class GamePage {
 
   join(eventList: EventList){
     console.log('Clicked on Join ', eventList);
+
+    let event: Event = {
+      name: eventList.title,
+      eventType : eventList.key.split('-')[0],
+      description: eventList.desc,
+      date: eventList.date,
+      imgUrl: eventList.img,        
+      comments: 15,
+      likes: 2,
+      liked: false,        
+      checkedIn:false,
+    };
+
+    this.EventService.AddEvent(event);
+    this.earnService.addRewardFromEvent(event);
+    this.toast.show(`You have joined the ${event.name} event!!`)
   }
 
 }

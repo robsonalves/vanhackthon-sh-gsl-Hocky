@@ -4,7 +4,6 @@ import { MatchService } from './../../services/match.service';
 import { ToastService } from './../../services/toast.service';
 import { Component, OnInit } from '@angular/core';
 import { EarnService } from '../../services/earn.service';
-import { ToastService } from '../../services/toast.service';
 import { NavController } from 'ionic-angular/navigation/nav-controller';
 import { HomePage } from '../home/home';
 

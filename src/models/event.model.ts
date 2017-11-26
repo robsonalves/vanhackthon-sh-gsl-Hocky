@@ -3,7 +3,7 @@ export interface Event{
     name: string,
     eventType : string,
     description: string,
-    date: Date,
+    date: number,
     imgUrl: string,        
     comments: number,
     likes:number,
