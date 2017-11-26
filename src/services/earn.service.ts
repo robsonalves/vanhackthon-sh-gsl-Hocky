@@ -3,15 +3,12 @@ import { NavController, ModalController } from 'ionic-angular';
 import { PopupService } from './popup.service';
 import { EventList } from './../models/eventlist.model';
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { RewardModel } from './../models/reward.model'
-import { RewardDetailsPageModule } from '../pages/reward-details/reward-details.module';
 import { Event } from "../models/event.model"
 import { AuthService } from './auth.service';
 import { Player } from '../models/player.model';
 import { Match } from '../models/match.model';
-import { platformBrowser } from '@angular/platform-browser/src/browser';
 
 @Injectable()
 export class EarnService {
@@ -40,11 +37,11 @@ export class EarnService {
         players.forEach(player => {
 
             this.rewardModel.place = player.name,
-            this.rewardModel.key = this.authService.getActiveUser().email,
-            this.rewardModel.date = Date.now(),
-            this.rewardModel.point = 5,
+                this.rewardModel.key = this.authService.getActiveUser().email,
+                this.rewardModel.date = Date.now(),
+                this.rewardModel.point = 5,
 
-            console.log('Player :::' + this.rewardModel)
+                console.log('Player :::' + this.rewardModel)
             this.rewardsRef.push(this.rewardModel);
         });
 
@@ -86,10 +83,10 @@ export class EarnService {
            })
 
            //check if points is 100
-           if(sumOfPoints >= 200){
+           if(sumOfPoints >= 500){
                //alert user to take selfie
-               this.alert.show('Max Reward!!', "Hurray!! You have reached above 200 points!! As a reward take a selfie and we'll show the world!!!");
-            //    this.modalCtrl.create(SelfiePage).present();
+
+               this.alert.show('Max Reward!!', "Hurray!! You have reached above 500 points!! As a reward take a selfie and we'll show the world!!!");
            }
        })
     }
