@@ -3,7 +3,7 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Today's Events</ion-title>
+    <ion-title>Rewards</ion-title>
   </ion-navbar>
 </ion-header>
 <ion-card>
@@ -17,9 +17,8 @@
         {{this.totalPoints}}
       </p>
     </div>
- 
   </ion-card-content>
-  <div>
-    <button ion-button round (click)="moreDetails()">More Details</button>
-  </div>
+  <button margin-bottom margin-right float-right ion-button color="primary" (click)="moreDetails()">
+      More Details
+    </button>
 </ion-card>

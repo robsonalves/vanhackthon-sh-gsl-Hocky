@@ -2,12 +2,13 @@ import { AuthService } from './../../services/auth.service';
 import { Component } from '@angular/core';
 import { NavController, NavParams, LoadingController, AlertController } from 'ionic-angular';
 import { FormControl } from "@angular/forms/src/model";
+import { SigninPage } from '../signin/signin';
 
 @Component({
-  selector: 'page-signup',
-  templateUrl: 'signup.html',
+  selector: 'page-reset-password-code',
+  templateUrl: 'reset-password-code.html',
 })
-export class SignupPage {
+export class ResetPasswordCodePage {
 
   constructor(
     public navCtrl: NavController,
@@ -24,21 +25,34 @@ export class SignupPage {
 
     load.present();
 
-    this.auth.singup(f.value.email, f.value.password)
-      .then(data => load.dismiss())
+    this.auth.confirmPasswordReset(f.value.code, f.value.newPassword)
+      .then(data => {
+        load.dismiss();
+        this.handleSuccess();
+        this.navCtrl.push(SigninPage);
+      })
       .catch((error) => {
         load.dismiss();
         this.handleError(error.message);
-      }
-      );
+      });
+  }
+
+  handleSuccess() {
+    const alert = this.alertCtrl.create({
+      title: 'Success!',
+      message: 'New password created.',
+      buttons: ['Ok']
+    });
+    alert.present();
   }
 
   handleError(message: string) {
     const alert = this.alertCtrl.create({
-      title: 'Sing Up error',
+      title: 'Error while reseting the password. Try again later.',
       message: message,
       buttons: ['Ok']
     });
+    alert.present();
   }
 
 }

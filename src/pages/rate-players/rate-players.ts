@@ -3,7 +3,6 @@ import { Match } from './../../models/match.model';
 import { MatchService } from './../../services/match.service';
 import { Component, OnInit } from '@angular/core';
 
-
 @Component({
   selector: 'page-rate-players',
   templateUrl: 'rate-players.html',
@@ -12,26 +11,17 @@ export class RatePlayersPage implements OnInit {
 
   match: Match
   constructor(
-    public matchServive: MatchService
+    public matchService: MatchService
   ){}
 
-
   ngOnInit(){
-    this.matchServive.getMatch()
+    this.matchService.getMatch()
     .subscribe(
       data => {
         this.match = data
-        console.log(data)
-        console.log(this.match.team1.players[0].name);
-
-
       }
-
     )
-    console.log('teste')
   }
-
-
 
   rate(p:Player, rate: number){
     p.rate = rate;
@@ -41,13 +31,9 @@ export class RatePlayersPage implements OnInit {
     this.match.rate = rate;
   }
 
+  saveRatings(){
+    console.log('to do save ratings');
+  }
 
-
-
-
-
-
-  
-
-
+  public mat = 'match';
 }

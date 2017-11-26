@@ -6,9 +6,10 @@ import { EventsListPage } from './../pages/events-list/events-list';
 import { GamePage } from './../pages/game/game';
 
 import { AuthService } from './../services/auth.service';
-import { WalkthroughPage } from './../pages/walkthrough/walkthrough';
 import { SignupPage } from './../pages/signup/signup';
 import { SigninPage } from './../pages/signin/signin';
+import { ResetPasswordPage } from './../pages/reset-password/reset-password';
+import { ResetPasswordCodePage } from './../pages/reset-password-code/reset-password-code';
 
 import { FIREBASE_CONFIG } from './firebase.credentials';
 
@@ -46,7 +47,8 @@ import { EarnService } from '../services/earn.service';
     ListPage,
     SigninPage,
     SignupPage,
-    WalkthroughPage,
+    ResetPasswordPage,
+    ResetPasswordCodePage,
     RewardPage,
     RewardDetailsPage,
     ConcertPage,
@@ -71,7 +73,8 @@ import { EarnService } from '../services/earn.service';
     ListPage,
     SigninPage,
     SignupPage,
-    WalkthroughPage,
+    ResetPasswordPage,
+    ResetPasswordCodePage,
     RewardPage,
     RewardDetailsPage,
     ConcertPage,
