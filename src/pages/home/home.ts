@@ -26,75 +26,74 @@ export class HomePage {
   constructor(
     public navCtrl: NavController,
     public eventService: EventService,
-    public authService : AuthService,
-    public earnService : EarnService,
-    public toast : ToastService,
-    public loading : LoadingService,
-
-    public alert : PopupService
+    public authService: AuthService,
+    public earnService: EarnService,
+    public toast: ToastService,
+    public loading: LoadingService,
+    public alert: PopupService,
     public modalCtrl: ModalController
 
-  ) {  
+  ) {
 
     this.events$ = this.eventService
       .getTodaysEvents()
       .snapshotChanges()
       .map(changes => {
-          return changes.map(c => ({
-                  key : c.payload.key, ...c.payload.val()
-          }))
+        return changes.map(c => ({
+          key: c.payload.key, ...c.payload.val()
+        }))
       });
 
-      //check for authentication
-      this.authService.user$.subscribe(user => {
-        if(user) return;
-        this.navCtrl.setRoot(SigninPage)
-      })
-    
+    //check for authentication
+    this.authService.user$.subscribe(user => {
+      if (user) return;
+      this.navCtrl.setRoot(SigninPage)
+    })
+
   }
 
-  ionViewWillEnter(){
+  ionViewWillEnter() {
     this.loading.show("Loading your events..");
   }
 
-  openModalComments(event){
+  openModalComments(event) {
     let modal = this.modalCtrl.create(CommentsPage, event);
     modal.present();
   };
 
-  onLike(event: Event){
-    event.liked = !event.liked;    
+  onLike(event: Event) {
+    event.liked = !event.liked;
     if (event.liked)
-      event.likes ++;    
+      event.likes++;
     else
-      event.likes --;
-    
+      event.likes--;
+
   }
 
-  onCheckIn(event: Event, index){
-   
+  onCheckIn(event: Event, index) {
+
     event.checkedIn = !event.checkedIn;
     let user = this.authService.getActiveUser().email;
 
-    if(user){
-        
-      if (event.checkedIn){
+    if (user) {
+
+      if (event.checkedIn) {
         this.eventService.joinEvent(event, user);
         this.earnService.addRewardFromEvent(event);
 
         this.alert.show('Points Earned', 'You have just earned 10 points');
         this.toast.show(`You have joined the ${event.name} event!!`)
 
-      }else{
+      } else {
         this.eventService.leaveEvent(event);
       }
-    }else{
+    } else {
       this.navCtrl.setRoot(SigninPage)
     }
   }
 
 
-  leaveEvent(key){
+  leaveEvent(key) {
     this.alert.show('Key', key);
     // this.eventService.leaveEvent(event);
   }
