@@ -9,6 +9,9 @@ import { EventService } from '../../services/event.service';
 import { EventListService } from '../../services/event-list.service';
 import { Observable } from 'rxjs/Observable';
 import { EventList } from '../../models/eventlist.model';
+import { ToastService } from '../../services/toast.service';
+import { EarnService } from '../../services/earn.service';
+import { Event } from '../../models/event.model';
 
 
 @IonicPage()
