@@ -7,41 +7,41 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>    
-  <ion-card  *ngFor="let event of events$ | async; let i = index">
-      <img [src]="event.imgUrl"/>
-      <ion-card-content>
-        <ion-card-title >
-          {{event.name}}
-        </ion-card-title>
-        <p>
-            {{event.description}}
-        </p>         
-      </ion-card-content>
-      <ion-row no-padding>
-        <ion-col no-padding width-30 text-left>
-          <button  ion-button clear small icon-left color="button-alt" (click)="onLike(event)" >
-            <ion-icon *ngIf="!event.liked" name='heart-outline'></ion-icon>
-            <ion-icon *ngIf="event.liked" color="danger" name='heart'></ion-icon>
-            {{event.likes}} Likes 
-          </button>
-        </ion-col>
-        <ion-col no-padding width-4s5 text-center>
+<ion-content padding>
+  <ion-card *ngFor="let event of events$ | async; let i = index">
+    <img [src]="event.imgUrl" />
+    <ion-card-content>
+      <ion-card-title>
+        {{event.name}}
+      </ion-card-title>
+      <p>
+        {{event.description}}
+      </p>
+    </ion-card-content>
+    <ion-row no-padding>
+      <ion-col no-padding width-30 text-left>
+        <button ion-button clear small icon-left color="button-alt" (click)="onLike(event)">
+          <ion-icon *ngIf="!event.liked" name='heart-outline'></ion-icon>
+          <ion-icon *ngIf="event.liked" color="danger" name='heart'></ion-icon>
+          {{event.likes}} Likes
+        </button>
+      </ion-col>
+      <ion-col no-padding width-4s5 text-center>
 
-          <button ion-button clear small icon-left color="button-alt" (click)="openModalComments(event)">
+        <button ion-button clear small icon-left color="button-alt" (click)="openModalComments(event)">
 
-            <ion-icon name='chatbubbles'></ion-icon>
-            {{event.comments}} Comments
-          </button>
-        </ion-col>   
-  
-        <ion-col no-padding width-25 text-right>
-          <button ion-button clear small icon-left color="button-alt" (click)="onCheckIn(event, i)">
-            <ion-icon *ngIf="!event.checkedIn"  name='checkbox-outline'></ion-icon>
-            <ion-icon *ngIf="event.checkedIn" color="primary" name='checkbox'></ion-icon>
-            Check in
-          </button>
-        </ion-col>
-      </ion-row>
-    </ion-card>  
+          <ion-icon name='chatbubbles'></ion-icon>
+          {{event.comments}} Comments
+        </button>
+      </ion-col>
+
+      <ion-col no-padding width-25 text-right>
+        <button ion-button clear small icon-left color="button-alt" (click)="onCheckIn(event, i)">
+          <ion-icon *ngIf="!event.checkedIn" name='checkbox-outline'></ion-icon>
+          <ion-icon *ngIf="event.checkedIn" color="primary" name='checkbox'></ion-icon>
+          Check in
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-card>
 </ion-content>
