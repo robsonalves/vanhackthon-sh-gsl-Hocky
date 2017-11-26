@@ -79,5 +79,4 @@ export class HomePage {
       this.navCtrl.setRoot(SigninPage)
     }
   }
-
 }

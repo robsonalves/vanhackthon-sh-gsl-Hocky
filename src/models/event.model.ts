@@ -15,4 +15,3 @@ export interface Event{
      username : string;
      eventKey : string;  
  }
-
