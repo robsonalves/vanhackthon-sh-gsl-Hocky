@@ -24,6 +24,7 @@ npm install -g cordova ionic
 
 to install all the dependencies. 
 
+##Deployment
 To run the app on your mobile device download the Ionic Dev App platform on your device from
 
 http://ionicframework.com/docs/pro/devapp
