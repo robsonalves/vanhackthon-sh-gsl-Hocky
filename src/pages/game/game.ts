@@ -74,7 +74,7 @@ export class GamePage {
       checkedIn:false,
     };
 
-    this.EventService.AddEvent(event);
+    this.eventService.AddEvent(event);
     this.earnService.addRewardFromEvent(event);
     this.alert.show('Points Earned', 'You have just earned 30 points');
 
