@@ -1,15 +1,12 @@
 import { PopupService } from './popup.service';
 import { EventList } from './../models/eventlist.model';
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { RewardModel } from './../models/reward.model'
-import { RewardDetailsPageModule } from '../pages/reward-details/reward-details.module';
 import { Event } from "../models/event.model"
 import { AuthService } from './auth.service';
 import { Player } from '../models/player.model';
 import { Match } from '../models/match.model';
-import { platformBrowser } from '@angular/platform-browser/src/browser';
 
 @Injectable()
 export class EarnService {
