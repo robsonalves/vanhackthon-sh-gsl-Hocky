@@ -1,3 +1,5 @@
+import { SelfiePage } from './../pages/selfie/selfie';
+import { NavController, ModalController } from 'ionic-angular';
 import { PopupService } from './popup.service';
 import { EventList } from './../models/eventlist.model';
 import { Injectable } from '@angular/core';
@@ -16,7 +18,8 @@ export class EarnService {
     constructor(
         private db: AngularFireDatabase,
         private authService: AuthService,
-        private alert : PopupService
+        private alert : PopupService,
+        public modalCtrl: ModalController
     ) { }
     private rewardModel: RewardModel = new RewardModel();
     private rewardsRef = this.db.list<RewardModel>('rewards');
@@ -86,6 +89,7 @@ export class EarnService {
            if(sumOfPoints >= 200){
                //alert user to take selfie
                this.alert.show('Max Reward!!', "Hurray!! You have reached above 200 points!! As a reward take a selfie and we'll show the world!!!");
+            //    this.modalCtrl.create(SelfiePage).present();
            }
        })
     }

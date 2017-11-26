@@ -41,7 +41,7 @@ import { EarnService } from '../services/earn.service';
 import { EventListService } from '../services/event-list.service';
 import { AuthService } from './../services/auth.service';
 import { LoadingService } from '../services/loading.service';
-import { PopupService } from './../services/popup.service';
+import { SelfiePage } from '../pages/selfie/selfie';
 
 
 @NgModule({
@@ -60,7 +60,8 @@ import { PopupService } from './../services/popup.service';
     GamePage,
     EventsListPage,
     RatingComponent,
-    RatePlayersPage
+    RatePlayersPage,
+    SelfiePage
   ],
   imports: [
     BrowserModule,
@@ -87,7 +88,8 @@ import { PopupService } from './../services/popup.service';
     GamePage,
     EventsListPage,
     RatingComponent,
-    RatePlayersPage
+    RatePlayersPage,
+    SelfiePage
   ],
   providers: [
     StatusBar,
