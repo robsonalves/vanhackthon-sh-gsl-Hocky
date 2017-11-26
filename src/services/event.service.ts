@@ -1,7 +1,7 @@
 import { ToastService } from './toast.service';
 import { Event, EventJoined } from './../models/event.model';
 import { Injectable } from '@angular/core';
-import 'rxjs/Rx'
+import 'rxjs/Rx';
 import { AngularFireDatabase } from 'angularfire2/database';
 
 @Injectable()
@@ -13,7 +13,6 @@ export class EventService{
     
     constructor(
         private db: AngularFireDatabase,
-        private toast : ToastService
     ){ }
 
 
@@ -35,6 +34,7 @@ export class EventService{
 
       eventToJoin.eventKey = event.key,
       eventToJoin.username = user;
+      eventToJoin.key = `${user}-${event.key}`;
 
       return this.eventJoinedRef.push(eventToJoin);
     
@@ -42,10 +42,13 @@ export class EventService{
 
     leaveEvent(event : Event, user : string){
 
-       var eventToLeave = this.db.list('/event-joined', 
-                    ref => ref.orderByChild('eventKey').equalTo(event.key)
-                              .orderByChild('username').equalTo(user));
-        
+        var eventRef = this.db.object('/event-joined').query
+                .orderByChild('key')
+                .equalTo(`${user}-${event.key}`)
+
+
+               
+        this.eventJoinedRef.remove(eventRef.ref.key);
      
     }
 

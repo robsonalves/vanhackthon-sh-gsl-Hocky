@@ -1,4 +1,4 @@
-import { Match } from './../models/match.model';
+
 import { Http } from '@angular/http';
 import { Injectable } from '@angular/core';
 
