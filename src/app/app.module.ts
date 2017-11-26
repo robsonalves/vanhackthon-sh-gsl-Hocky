@@ -1,3 +1,4 @@
+import { LoadingService } from './../services/loading.service';
 import { MatchService } from './../services/match.service';
 import { RatePlayersPage } from './../pages/rate-players/rate-players';
 import { RatingComponent } from './../components/rating/rating';
@@ -38,6 +39,7 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { ToastService } from '../services/toast.service';
 import { RewardDetailsPage } from '../pages/reward-details/reward-details';
 import { EarnService } from '../services/earn.service';
+
 
 
 @NgModule({
@@ -93,6 +95,7 @@ import { EarnService } from '../services/earn.service';
     MatchService,
     AngularFireAuth,
     EarnService,
+    LoadingService,
     { provide: ErrorHandler, useClass: IonicErrorHandler }
   ]
 })
