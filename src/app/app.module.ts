@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-=======
-import { PopupService } from './../services/popup.service';
-
->>>>>>> 611ea4deca33ee36ce305f7edcc96a6d92333197
 import { RatingComponent } from './../components/rating/rating';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { FIREBASE_CONFIG } from './firebase.credentials';
