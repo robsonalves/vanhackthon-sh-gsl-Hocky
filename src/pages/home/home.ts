@@ -11,6 +11,7 @@ import { NavController, ModalController } from 'ionic-angular';
 import { Event } from "../../models/event.model";
 import { EventService } from "../../services/event.service";
 import { EarnService } from "../../services/earn.service";
+import { PopupService } from '../../services/popup.service';
 
 @IonicPage()
 @Component({
@@ -29,7 +30,10 @@ export class HomePage {
     public earnService : EarnService,
     public toast : ToastService,
     public loading : LoadingService,
+
+    public alert : PopupService
     public modalCtrl: ModalController
+
   ) {  
 
     this.events$ = this.eventService
@@ -67,23 +71,32 @@ export class HomePage {
     
   }
 
-  onCheckIn(event: Event){
+  onCheckIn(event: Event, index){
+   
     event.checkedIn = !event.checkedIn;
     let user = this.authService.getActiveUser().email;
 
     if(user){
         
       if (event.checkedIn){
-        // console.log(event, user);
         this.eventService.joinEvent(event, user);
         this.earnService.addRewardFromEvent(event);
+
+        this.alert.show('Points Earned', 'You have just earned 10 points');
         this.toast.show(`You have joined the ${event.name} event!!`)
 
       }else{
-        this.eventService.leaveEvent(event, user);
+        this.eventService.leaveEvent(event);
       }
     }else{
       this.navCtrl.setRoot(SigninPage)
     }
   }
+
+
+  leaveEvent(key){
+    this.alert.show('Key', key);
+    // this.eventService.leaveEvent(event);
+  }
+
 }
