@@ -34,7 +34,7 @@ export class RewardChangePage {
     },
     {
       description: 'Selfie on the big screen',
-      price: 200
+      price: 500
     }];
   }
 
