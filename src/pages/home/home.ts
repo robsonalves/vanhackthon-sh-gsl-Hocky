@@ -1,3 +1,4 @@
+import { LoadingService } from './../../services/loading.service';
 import { ToastService } from './../../services/toast.service';
 import { SigninPage } from './../signin/signin';
 import { AuthService } from './../../services/auth.service';
@@ -25,7 +26,8 @@ export class HomePage {
     public eventService: EventService,
     public authService : AuthService,
     public earnService : EarnService,
-    public toast : ToastService
+    public toast : ToastService,
+    public loading : LoadingService
   ) {  
 
     this.events$ = this.eventService
@@ -45,6 +47,9 @@ export class HomePage {
     
   }
 
+  ionViewWillEnter(){
+    this.loading.show("Loading your events..");
+  }
 
   onLike(event: Event){
     event.liked = !event.liked;    

@@ -11,6 +11,7 @@ export interface Event{
     checkedIn:boolean
 }
  export class EventJoined{
+     key : string;
      username : string;
      eventKey : string;  
  }

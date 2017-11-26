@@ -36,6 +36,8 @@ import { ToastService } from '../services/toast.service';
 import { EarnService } from '../services/earn.service';
 import { EventListService } from '../services/event-list.service';
 import { AuthService } from './../services/auth.service';
+import { LoadingService } from '../services/loading.service';
+
 
 
 @NgModule({
@@ -92,6 +94,7 @@ import { AuthService } from './../services/auth.service';
     AngularFireAuth,
     EarnService,
     EventListService,
+    LoadingService,
     { provide: ErrorHandler, useClass: IonicErrorHandler }
   ]
 })
