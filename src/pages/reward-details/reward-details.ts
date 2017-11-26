@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { OnInit } from '@angular/core/src/metadata/lifecycle_hooks';
 import { RewardService } from '../../services/reward.service';
 import { Observable } from 'rxjs/Observable';
+import { AuthService } from '../../services/auth.service';
 
 /**
  * Generated class for the RewardDetailsPage page.
@@ -21,12 +22,13 @@ export class RewardDetailsPage implements OnInit {
 
   constructor(public navCtrl: NavController, 
             public navParams: NavParams,
-            public rewardService: RewardService) {
+            public rewardService: RewardService,
+            private authService: AuthService) {
   }
 
   ngOnInit(): void {
     this.rewards$ = this.rewardService
-    .getRewardsDetails()
+    .getRewardsDetails(this.authService.getActiveUser().email)
     .snapshotChanges()
     .map(changes => { 
         return changes.map(c => ({
@@ -34,9 +36,6 @@ export class RewardDetailsPage implements OnInit {
         }))
     });
   }
-
-  
-
   ionViewDidLoad() {
     console.log('ionViewDidLoad RewardDetailsPage');
   }

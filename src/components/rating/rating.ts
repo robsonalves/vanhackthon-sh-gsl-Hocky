@@ -16,8 +16,6 @@ export class RatingComponent implements OnInit {
   range: Array<Number>;
 
   constructor() {
-
-
   }
 
   ngOnInit() {
