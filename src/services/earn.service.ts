@@ -83,9 +83,9 @@ export class EarnService {
            })
 
            //check if points is 100
-           if(sumOfPoints >= 200){
+           if(sumOfPoints >= 500){
                //alert user to take selfie
-               this.alert.show('Max Reward!!', "Hurray!! You have reached above 200 points!! As a reward take a selfie and we'll show the world!!!");
+               this.alert.show('Max Reward!!', "Hurray!! You have reached above 500 points!! As a reward take a selfie and we'll show the world!!!");
            }
        })
     }
