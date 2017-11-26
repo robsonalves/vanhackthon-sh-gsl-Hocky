@@ -18,6 +18,9 @@ and install ionic on your machine if you dont have one
 ```
 npm install -g ionic@latest
 ```
+```
+npm install -g cordova ionic
+```
 
 to install all the dependencies. 
 
