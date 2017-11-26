@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { RewardService } from '../../services/reward.service';
 import { RewardModel } from '../../models/reward.model';
-import { RewardDetailsPage } from '../reward-details/reward-details'
+import { RewardDetailsPage } from '../reward-details/reward-details';
+import { RewardChangePage } from '../reward-change/reward-change';
 import { Observable } from 'rxjs/Observable';
 import { AuthService } from '../../services/auth.service';
 
@@ -43,5 +44,9 @@ export class RewardPage {
 
   moreDetails() {
     this.navCtrl.push(RewardDetailsPage);
+  }
+
+  changePoints() {
+    this.navCtrl.push(RewardChangePage);
   }
 }

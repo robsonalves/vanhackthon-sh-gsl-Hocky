@@ -12,7 +12,8 @@ import { AuthService } from './../../services/auth.service';
 export class CommentsPage {
   @ViewChild(Content) content: Content;
   eventName: string;
-  comments: Array<{ commenterName: string,
+  comments: Array<{
+    commenterName: string,
     comment: string,
     avatar: string
   }>;
