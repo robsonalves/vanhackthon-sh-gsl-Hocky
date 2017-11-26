@@ -20,6 +20,7 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { CommentsPage } from '../pages/comments/comments';
 import { ListPage } from '../pages/list/list';
 import { RewardPage } from '../pages/reward/reward';
 
@@ -46,6 +47,7 @@ import { EarnService } from '../services/earn.service';
   declarations: [
     MyApp,
     HomePage,
+    CommentsPage,
     ListPage,
     SigninPage,
     SignupPage,
@@ -72,6 +74,7 @@ import { EarnService } from '../services/earn.service';
   entryComponents: [
     MyApp,
     HomePage,
+    CommentsPage,
     ListPage,
     SigninPage,
     SignupPage,

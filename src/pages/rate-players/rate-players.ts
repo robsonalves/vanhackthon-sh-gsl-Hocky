@@ -1,6 +1,7 @@
 import { Player } from './../../models/player.model';
 import { Match } from './../../models/match.model';
 import { MatchService } from './../../services/match.service';
+import { ToastService } from './../../services/toast.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -11,7 +12,8 @@ export class RatePlayersPage implements OnInit {
 
   match: Match
   constructor(
-    public matchService: MatchService
+    public matchService: MatchService,
+    public toast : ToastService,
   ){}
 
   ngOnInit(){
@@ -33,6 +35,7 @@ export class RatePlayersPage implements OnInit {
 
   saveRatings(){
     console.log('to do save ratings');
+    this.toast.show('You won 10 rewards points!');
   }
 
   public mat = 'match';
