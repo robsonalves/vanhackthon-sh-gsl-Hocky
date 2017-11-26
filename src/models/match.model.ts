@@ -6,5 +6,6 @@ export interface Match extends Rated{
     team1: Team,
     team2: Team,
     date: Date,
-    referee: string
+    referee: string,
+    name: string
 }

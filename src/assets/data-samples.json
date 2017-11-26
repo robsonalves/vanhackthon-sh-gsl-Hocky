@@ -24,6 +24,7 @@
 "match":    
     {
         "referee":"test",
+        "name" : "Pittsburgh Penguins vs Toronto Maple Leaf",
         "team1":
             {
                 "name":"Pittsburgh Penguins",
