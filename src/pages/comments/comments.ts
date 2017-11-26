@@ -49,27 +49,27 @@ export class CommentsPage {
     },
     {
       commenterName: 'Woody',
-      comment: 'This game will be awesome! Go Canada!',
+      comment: 'Can\'t wait for the game!',
       avatar: '../../assets/imgs/comments/profile-woody.jpg'
     },
     {
       commenterName: 'Anakin',
-      comment: 'Yeeeaaahhh really excited!',
+      comment: 'I\' going with my son. :D',
       avatar: '../../assets/imgs/comments/profile-anakin.jpg'
     },
     {
       commenterName: 'Legolas',
-      comment: 'The stadium is full? Because I forgot to buy a ticket. Please please dont be full.',
+      comment: 'I bet Canada will win! Easily.',
       avatar: '../../assets/imgs/comments/profile-legolas.jpg'
     },
     {
       commenterName: 'Woody',
-      comment: 'This game will be awesome! Go Canada!',
+      comment: 'There isn\'t a snake in this game!',
       avatar: '../../assets/imgs/comments/profile-woody.jpg'
     },
     {
       commenterName: 'Anakin',
-      comment: 'Yeeeaaahhh really excited!',
+      comment: 'Just bought my ticket! Yay!',
       avatar: '../../assets/imgs/comments/profile-anakin.jpg'
     }];
   }
