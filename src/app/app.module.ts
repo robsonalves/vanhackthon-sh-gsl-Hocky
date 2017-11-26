@@ -2,7 +2,6 @@
 import { RatePlayersPage } from './../pages/rate-players/rate-players';
 import { RatingComponent } from './../components/rating/rating';
 
-import { PopupService } from './../services/popup.service';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { FIREBASE_CONFIG } from './firebase.credentials';
 

@@ -1,9 +1,6 @@
-import { ToastService } from './../../services/toast.service';
-import { EarnService } from './../../services/earn.service';
 import { SigninPage } from './../signin/signin';
 import { AuthService } from './../../services/auth.service';
 import { PopupService } from './../../services/popup.service';
-import { Event } from './../../models/event.model';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { EventService } from '../../services/event.service';
@@ -74,7 +71,7 @@ export class GamePage {
       checkedIn:false,
     };
 
-    this.EventService.AddEvent(event);
+    this.eventService.AddEvent(event);
     this.earnService.addRewardFromEvent(event);
     this.alert.show('Points Earned', 'You have just earned 30 points');
 
