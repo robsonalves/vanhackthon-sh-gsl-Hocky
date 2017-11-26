@@ -12,6 +12,7 @@ import { RatePlayersPage } from './../pages/rate-players/rate-players';
 import { EventsListPage } from './../pages/events-list/events-list';
 import { GamePage } from './../pages/game/game';
 import { HomePage } from '../pages/home/home';
+import { CommentsPage } from '../pages/comments/comments';
 import { ListPage } from '../pages/list/list';
 import { RewardPage } from '../pages/reward/reward';
 import { ConcertPage } from '../pages/concert/concert';
@@ -44,6 +45,7 @@ import { LoadingService } from '../services/loading.service';
   declarations: [
     MyApp,
     HomePage,
+    CommentsPage,
     ListPage,
     SigninPage,
     SignupPage,
@@ -70,6 +72,7 @@ import { LoadingService } from '../services/loading.service';
   entryComponents: [
     MyApp,
     HomePage,
+    CommentsPage,
     ListPage,
     SigninPage,
     SignupPage,

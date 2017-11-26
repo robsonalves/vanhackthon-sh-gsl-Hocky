@@ -1,6 +1,7 @@
 import { Player } from './../../models/player.model';
 import { Match } from './../../models/match.model';
 import { MatchService } from './../../services/match.service';
+import { ToastService } from './../../services/toast.service';
 import { Component, OnInit } from '@angular/core';
 import { EarnService } from '../../services/earn.service';
 import { ToastService } from '../../services/toast.service';
