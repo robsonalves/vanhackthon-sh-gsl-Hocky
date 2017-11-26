@@ -1,3 +1,9 @@
+
+import { PopupService } from './../services/popup.service';
+import { LoadingService } from './../services/loading.service';
+import { MatchService } from './../services/match.service';
+import { RatePlayersPage } from './../pages/rate-players/rate-players';
+
 import { RatingComponent } from './../components/rating/rating';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { FIREBASE_CONFIG } from './firebase.credentials';
@@ -98,6 +104,7 @@ import { LoadingService } from '../services/loading.service';
     EarnService,
     EventListService,
     LoadingService,
+    PopupService,
     { provide: ErrorHandler, useClass: IonicErrorHandler }
   ]
 })

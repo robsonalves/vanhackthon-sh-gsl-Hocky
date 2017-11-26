@@ -19,6 +19,18 @@ export class EventService{
         return this.eventsRef;
     }
 
+    getEventsByUser(user : string ) {
+         return this.db.list<EventJoined>('events-joined', 
+              ref => ref.orderByChild('username')
+                        .equalTo(user))
+
+       
+    }
+
+    getEventById(id){
+       return this.db.object('/events/'+id).valueChanges();
+    }
+
     AddEvent(event : Event){
         return this.eventsRef.push(event);
     }
@@ -32,16 +44,17 @@ export class EventService{
 
       eventToJoin.eventKey = event.key,
       eventToJoin.username = user;
-      eventToJoin.key = `${user}-${event.key}`;
 
-      return this.eventJoinedRef.push(eventToJoin);
+       var key = this.eventJoinedRef.push(eventToJoin).key;
+       this.db.object('/event-joined/'+key).update({
+           key : key
+       })
     }
 
-    leaveEvent(event : Event, user : string){
+    leaveEvent(event : Event){
 
-       var eventToLeave = this.db.list('/event-joined', 
-                    ref => ref.orderByChild('eventKey').equalTo(event.key)
-                              .orderByChild('username').equalTo(user));
+       return this.db.object('/event-joined/'+event.key).remove();
+                   
     }
 
     likeEvent(event : Event){
