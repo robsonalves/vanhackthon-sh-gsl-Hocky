@@ -1,3 +1,4 @@
+import { EventList } from './../models/eventlist.model';
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import { AngularFireDatabase } from 'angularfire2/database';
@@ -46,6 +47,16 @@ export class EarnService {
         this.rewardModel.key = this.authService.getActiveUser().email;
         this.rewardModel.date = Date.now();
         this.rewardModel.point = 5;
+
+        console.log(this.rewardModel)
+        this.rewardsRef.push(this.rewardModel);
+    }
+
+    addRewardFromEventList(event: EventList) {
+        this.rewardModel.place = event.title;
+        this.rewardModel.key = this.authService.getActiveUser().email;
+        this.rewardModel.date = Date.now();
+        this.rewardModel.point = 30;
 
         console.log(this.rewardModel)
         this.rewardsRef.push(this.rewardModel);
