@@ -1,3 +1,4 @@
+
 import { RatePlayersPage } from './../pages/rate-players/rate-players';
 import { RatingComponent } from './../components/rating/rating';
 
@@ -40,7 +41,7 @@ import { EarnService } from '../services/earn.service';
 import { EventListService } from '../services/event-list.service';
 import { AuthService } from './../services/auth.service';
 import { LoadingService } from '../services/loading.service';
-
+import { PopupService } from './../services/popup.service';
 
 
 @NgModule({
