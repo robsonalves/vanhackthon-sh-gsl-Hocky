@@ -36,6 +36,7 @@ import { ConcertPage } from '../pages/concert/concert';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { ToastService } from '../services/toast.service';
 import { RewardDetailsPage } from '../pages/reward-details/reward-details';
+import { EarnService } from '../services/earn.service';
 
 
 @NgModule({
@@ -78,7 +79,6 @@ import { RewardDetailsPage } from '../pages/reward-details/reward-details';
     EventsListPage,
     RatingComponent,
     RatePlayersPage
-
   ],
   providers: [
     StatusBar,
@@ -89,8 +89,8 @@ import { RewardDetailsPage } from '../pages/reward-details/reward-details';
     ToastService,
     MatchService,
     AngularFireAuth,
+    EarnService,
     { provide: ErrorHandler, useClass: IonicErrorHandler }
-
   ]
 })
 export class AppModule { }

@@ -9,6 +9,7 @@ import { IonicPage } from 'ionic-angular/navigation/ionic-page';
 import { NavController } from 'ionic-angular';
 import { Event } from "../../models/event.model";
 import { EventService } from "../../services/event.service";
+import { EarnService } from "../../services/earn.service";
 
 @IonicPage()
 @Component({
@@ -24,6 +25,7 @@ export class HomePage {
     public navCtrl: NavController,
     public eventService: EventService,
     public authService : AuthService,
+    public earnService : EarnService,
     public toast : ToastService
   ) {  
 
@@ -39,7 +41,6 @@ export class HomePage {
       //check for authentication
       this.authService.user$.subscribe(user => {
         if(user) return;
-
         this.navCtrl.setRoot(SigninPage)
       })
     
@@ -62,7 +63,9 @@ export class HomePage {
     if(user){
         
       if (event.checkedIn){
+        // console.log(event, user);
         this.eventService.joinEvent(event, user);
+        this.earnService.addRewardFromEvent(event);
         this.toast.show(`You have joined the ${event.name} event!!`)
 
       }else{
@@ -71,7 +74,6 @@ export class HomePage {
     }else{
       this.navCtrl.setRoot(SigninPage)
     }
-  
   }
 
 }

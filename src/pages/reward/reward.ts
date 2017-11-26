@@ -4,26 +4,29 @@ import { RewardService } from '../../services/reward.service';
 import { RewardModel } from '../../models/reward.model';
 import { RewardDetailsPage } from '../reward-details/reward-details'
 import { Observable } from 'rxjs/Observable';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'page-list',
   templateUrl: 'reward.html'
 })
 export class RewardPage {
+  
   totalPoints: number;
   point$: Observable<RewardModel[]>;
 
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
-    public rewardService: RewardService
+    public rewardService: RewardService,
+    private authService: AuthService
   ) {
     this.sumTotalPoints();
   }
 
   sumTotalPoints() {
     this.point$ = this.rewardService
-      .getRewardsDetails()
+      .getRewardsDetails(this.authService.getActiveUser().email)
       .snapshotChanges()
       .map(changes => {
         return changes.map(c => ({
