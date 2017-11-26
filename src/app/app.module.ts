@@ -1,5 +1,8 @@
+<<<<<<< HEAD
+=======
 import { PopupService } from './../services/popup.service';
 
+>>>>>>> 611ea4deca33ee36ce305f7edcc96a6d92333197
 import { RatingComponent } from './../components/rating/rating';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { FIREBASE_CONFIG } from './firebase.credentials';
@@ -40,7 +43,7 @@ import { EarnService } from '../services/earn.service';
 import { EventListService } from '../services/event-list.service';
 import { AuthService } from './../services/auth.service';
 import { LoadingService } from '../services/loading.service';
-
+import { PopupService } from './../services/popup.service';
 
 
 @NgModule({
