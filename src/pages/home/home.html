@@ -27,7 +27,9 @@
           </button>
         </ion-col>
         <ion-col no-padding width-4s5 text-center>
-          <button  ion-button clear small icon-left color="button-alt" >
+
+          <button ion-button clear small icon-left color="button-alt" (click)="openModalComments(event)">
+
             <ion-icon name='chatbubbles'></ion-icon>
             {{event.comments}} Comments
           </button>

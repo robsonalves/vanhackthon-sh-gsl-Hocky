@@ -1,12 +1,13 @@
 import { LoadingService } from './../../services/loading.service';
 import { ToastService } from './../../services/toast.service';
 import { SigninPage } from './../signin/signin';
+import { CommentsPage } from './../comments/comments';
 import { AuthService } from './../../services/auth.service';
 import { Observable } from 'rxjs/Rx';
 
-import { Component} from '@angular/core';
+import { Component } from '@angular/core';
 import { IonicPage } from 'ionic-angular/navigation/ionic-page';
-import { NavController } from 'ionic-angular';
+import { NavController, ModalController } from 'ionic-angular';
 import { Event } from "../../models/event.model";
 import { EventService } from "../../services/event.service";
 import { EarnService } from "../../services/earn.service";
@@ -29,7 +30,10 @@ export class HomePage {
     public earnService : EarnService,
     public toast : ToastService,
     public loading : LoadingService,
+
     public alert : PopupService
+    public modalCtrl: ModalController
+
   ) {  
 
     this.events$ = this.eventService
@@ -52,6 +56,11 @@ export class HomePage {
   ionViewWillEnter(){
     this.loading.show("Loading your events..");
   }
+
+  openModalComments(event){
+    let modal = this.modalCtrl.create(CommentsPage, event);
+    modal.present();
+  };
 
   onLike(event: Event){
     event.liked = !event.liked;    
@@ -83,6 +92,7 @@ export class HomePage {
       this.navCtrl.setRoot(SigninPage)
     }
   }
+
 
   leaveEvent(key){
     this.alert.show('Key', key);
