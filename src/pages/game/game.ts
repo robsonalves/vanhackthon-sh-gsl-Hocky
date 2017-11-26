@@ -1,3 +1,9 @@
+import { ToastService } from './../../services/toast.service';
+import { EarnService } from './../../services/earn.service';
+import { SigninPage } from './../signin/signin';
+import { AuthService } from './../../services/auth.service';
+import { PopupService } from './../../services/popup.service';
+import { Event } from './../../models/event.model';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { EventService } from '../../services/event.service';
@@ -20,12 +26,20 @@ export class GamePage {
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams,
-    private eventlistService : EventListService,
-    private EventService: EventService,
-    private earnService: EarnService,
-    private toast: ToastService) {
+    public eventService : EventService,
+    public alert : PopupService,
+    public toast : ToastService,
+    public authService : AuthService,
+    public earnService : EarnService,
+    public eventlistService : EventListService) {
 
     this.getData();
+
+    //check for authentication
+    this.authService.user$.subscribe(user => {
+      if(user) return;
+      this.navCtrl.setRoot(SigninPage)
+    })
   }
 
   ionViewDidLoad() {
@@ -44,6 +58,7 @@ export class GamePage {
     });
   }
 
+
   join(eventList: EventList){
     console.log('Clicked on Join ', eventList);
 
@@ -61,6 +76,8 @@ export class GamePage {
 
     this.EventService.AddEvent(event);
     this.earnService.addRewardFromEvent(event);
+    this.alert.show('Points Earned', 'You have just earned 30 points');
+
     this.toast.show(`You have joined the ${event.name} event!!`)
   }
 
