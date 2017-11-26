@@ -1,0 +1,25 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>Rewards</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <div>
+        <h1>Change Points for Prizes</h1>
+        <div class="row header">
+            <div class="col">Price</div>
+            <div class="col">Product</div>
+        </div>
+        <div class="row" *ngFor="let prize of prizes">
+            <div class="col">{{prize.price}}</div>
+            <div class="col">{{prize.description}}</div>
+        </div>
+    </div>
+    <p>
+        To change your points for any product, please go to the stadium administration
+    </p>
+</ion-content>

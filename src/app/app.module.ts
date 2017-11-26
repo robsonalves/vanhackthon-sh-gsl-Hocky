@@ -19,6 +19,7 @@ import { ListPage } from '../pages/list/list';
 import { RewardPage } from '../pages/reward/reward';
 import { ConcertPage } from '../pages/concert/concert';
 import { RewardDetailsPage } from '../pages/reward-details/reward-details';
+import { RewardChangePage } from '../pages/reward-change/reward-change';
 import { SignupPage } from './../pages/signup/signup';
 import { SigninPage } from './../pages/signin/signin';
 import { ResetPasswordPage } from './../pages/reset-password/reset-password';
@@ -55,6 +56,7 @@ import { PopupService } from './../services/popup.service';
     ResetPasswordCodePage,
     RewardPage,
     RewardDetailsPage,
+    RewardChangePage,
     ConcertPage,
     GamePage,
     EventsListPage,
@@ -82,6 +84,7 @@ import { PopupService } from './../services/popup.service';
     ResetPasswordCodePage,
     RewardPage,
     RewardDetailsPage,
+    RewardChangePage,
     ConcertPage,
     GamePage,
     EventsListPage,
