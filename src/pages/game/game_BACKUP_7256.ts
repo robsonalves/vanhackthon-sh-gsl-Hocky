@@ -1,6 +1,9 @@
+import { ToastService } from './../../services/toast.service';
+import { EarnService } from './../../services/earn.service';
 import { SigninPage } from './../signin/signin';
 import { AuthService } from './../../services/auth.service';
 import { PopupService } from './../../services/popup.service';
+import { Event } from './../../models/event.model';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { EventService } from '../../services/event.service';
@@ -24,13 +27,19 @@ export class GamePage {
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
+<<<<<<< HEAD
     public eventService : EventService,
     public alert : PopupService,
     public toast : ToastService,
     public authService : AuthService,
     public earnService : EarnService,
-    public eventlistService : EventListService
-  ) {
+    public eventlistService : EventListService) {
+=======
+    private eventlistService: EventListService,
+    private EventService: EventService,
+    private earnService: EarnService,
+    private toast: ToastService) {
+>>>>>>> code-cleaning
 
     this.getData();
 
@@ -57,7 +66,12 @@ export class GamePage {
       });
   }
 
+<<<<<<< HEAD
+
+  join(eventList: EventList){
+=======
   join(eventList: EventList) {
+>>>>>>> code-cleaning
     console.log('Clicked on Join ', eventList);
 
     let event: Event = {

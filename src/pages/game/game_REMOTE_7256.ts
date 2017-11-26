@@ -1,6 +1,3 @@
-import { SigninPage } from './../signin/signin';
-import { AuthService } from './../../services/auth.service';
-import { PopupService } from './../../services/popup.service';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { EventService } from '../../services/event.service';
@@ -24,21 +21,12 @@ export class GamePage {
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
-    public eventService : EventService,
-    public alert : PopupService,
-    public toast : ToastService,
-    public authService : AuthService,
-    public earnService : EarnService,
-    public eventlistService : EventListService
-  ) {
+    private eventlistService: EventListService,
+    private EventService: EventService,
+    private earnService: EarnService,
+    private toast: ToastService) {
 
     this.getData();
-
-    //check for authentication
-    this.authService.user$.subscribe(user => {
-      if(user) return;
-      this.navCtrl.setRoot(SigninPage)
-    })
   }
 
   ionViewDidLoad() {
@@ -72,10 +60,8 @@ export class GamePage {
       checkedIn: false,
     };
 
-    this.eventService.AddEvent(event);
+    this.EventService.AddEvent(event);
     this.earnService.addRewardFromEvent(event);
-    this.alert.show('Points Earned', 'You have just earned 30 points');
-
     this.toast.show(`You have joined the ${event.name} event!!`)
   }
 
