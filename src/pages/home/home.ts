@@ -30,10 +30,8 @@ export class HomePage {
     public earnService : EarnService,
     public toast : ToastService,
     public loading : LoadingService,
-
-    public alert : PopupService
+    public alert : PopupService,
     public modalCtrl: ModalController
-
   ) {  
 
     this.events$ = this.eventService
@@ -83,7 +81,7 @@ export class HomePage {
         this.earnService.addRewardFromEvent(event);
 
         this.alert.show('Points Earned', 'You have just earned 10 points');
-        this.toast.show(`You have joined the ${event.name} event!!`)
+        this.toast.show(`You have joined the ${event.name} event!!`);
 
       }else{
         this.eventService.leaveEvent(event);

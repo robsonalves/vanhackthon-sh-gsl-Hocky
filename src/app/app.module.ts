@@ -1,9 +1,3 @@
-
-import { PopupService } from './../services/popup.service';
-import { LoadingService } from './../services/loading.service';
-import { MatchService } from './../services/match.service';
-import { RatePlayersPage } from './../pages/rate-players/rate-players';
-
 import { RatingComponent } from './../components/rating/rating';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { FIREBASE_CONFIG } from './firebase.credentials';
@@ -44,7 +38,7 @@ import { EarnService } from '../services/earn.service';
 import { EventListService } from '../services/event-list.service';
 import { AuthService } from './../services/auth.service';
 import { LoadingService } from '../services/loading.service';
-
+import { PopupService } from './../services/popup.service';
 
 
 @NgModule({
