@@ -1,3 +1,4 @@
+import { PopupService } from './../services/popup.service';
 import { LoadingService } from './../services/loading.service';
 import { MatchService } from './../services/match.service';
 import { RatePlayersPage } from './../pages/rate-players/rate-players';
@@ -96,6 +97,7 @@ import { EarnService } from '../services/earn.service';
     AngularFireAuth,
     EarnService,
     LoadingService,
+    PopupService,
     { provide: ErrorHandler, useClass: IonicErrorHandler }
   ]
 })
