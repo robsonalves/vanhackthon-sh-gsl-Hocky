@@ -1,16 +1,23 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
-import 'rxjs/Rx'
+import { AngularFireDatabase } from 'angularfire2/database';
+import { RewardModel } from './../models/reward.model'
 
 @Injectable()
 export class RewardService {
 
+    private rewardsRef = this.db.list<RewardModel>('rewards');
+
     constructor(
-        private http: Http
+        private db: AngularFireDatabase
     ) { }
 
-    getMyRewards() {
-        return this.http.get('assets/data-rewards-samples.json')
-            .map(Response => Response.json().reward)
+    getAllRewardsDetails() {
+        return this.rewardsRef;
+    }
+
+    getRewardsDetails(key: string) {
+        return this.db.list("/rewards",
+            ref => ref.orderByChild("key").equalTo(key));
     }
 }

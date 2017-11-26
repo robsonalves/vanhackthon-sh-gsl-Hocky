@@ -1,8 +1,8 @@
 export class RewardModel {
-    constructor(
-        public date: Date,
-        public point: number,
-        public place: string
-    )
-     { }
+    key?: string
+    date: number
+    point: number
+    place: string
+
+    constructor() { }
 }

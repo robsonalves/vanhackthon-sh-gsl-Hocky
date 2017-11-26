@@ -8,10 +8,10 @@
   <ion-grid>
     <form col-12 class="mt-40p" #f="ngForm">
       <ion-list>
-        <ion-item>
+        <ion-item class="input-form">
           <ion-input type="email" placeholder="Email address" ngModel required name="email"></ion-input>
         </ion-item>
-        <ion-item>
+        <ion-item class="input-form">
           <ion-input type="password" placeholder="Password" ngModel required name="password"></ion-input>
         </ion-item>
         <button ion-button block class="button-sign" (click)="onSubmit(f)" [disabled]="!f.valid">Sign Up</button>

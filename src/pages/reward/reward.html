@@ -1,23 +1,25 @@
 <ion-header>
-    <ion-navbar>
-        <button ion-button menuToggle>
-            <ion-icon name="menu"></ion-icon>
-        </button>
-        <ion-title>Rewards</ion-title>
-    </ion-navbar>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Today's Events</ion-title>
+  </ion-navbar>
 </ion-header>
-
-<ion-content padding>
-    <h1> My rewards - Details</h1>
-    <div class="row header">
-        <div class="col">Date</div>
-        <div class="col">Points</div>
-        <div class="col">Place</div>
+<ion-card>
+  <img src="../../assets/imgs/rewards/reward-points-for-events.png" style="margin:0px" />
+  <ion-card-content>
+    <ion-card-title>
+      My Points
+    </ion-card-title>
+    <div class="circle-around">
+      <p style="font-size:50px">
+        {{this.totalPoints}}
+      </p>
     </div>
-    <div class="row" *ngFor="let reward of rewards">
-        <div class="col">{{reward.date}}</div>
-        <div class="col">{{reward.point}}</div>
-        <div class="col">{{reward.place}}</div>
-    </div>
-</ion-content>
-
+ 
+  </ion-card-content>
+  <div>
+    <button margin-bottom margin-right float-right ion-button color="primary" (click)="moreDetails()">More Details</button>
+  </div>
+</ion-card>

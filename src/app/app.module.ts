@@ -6,9 +6,10 @@ import { EventsListPage } from './../pages/events-list/events-list';
 import { GamePage } from './../pages/game/game';
 
 import { AuthService } from './../services/auth.service';
-import { WalkthroughPage } from './../pages/walkthrough/walkthrough';
 import { SignupPage } from './../pages/signup/signup';
 import { SigninPage } from './../pages/signin/signin';
+import { ResetPasswordPage } from './../pages/reset-password/reset-password';
+import { ResetPasswordCodePage } from './../pages/reset-password-code/reset-password-code';
 
 import { FIREBASE_CONFIG } from './firebase.credentials';
 
@@ -35,6 +36,8 @@ import { RewardModel } from '../models/reward.model';
 import { ConcertPage } from '../pages/concert/concert';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { ToastService } from '../services/toast.service';
+import { RewardDetailsPage } from '../pages/reward-details/reward-details';
+import { EarnService } from '../services/earn.service';
 
 
 @NgModule({
@@ -44,14 +47,15 @@ import { ToastService } from '../services/toast.service';
     ListPage,
     SigninPage,
     SignupPage,
-    WalkthroughPage,
+    ResetPasswordPage,
+    ResetPasswordCodePage,
     RewardPage,
+    RewardDetailsPage,
     ConcertPage,
     GamePage,
     EventsListPage,
     RatingComponent,
     RatePlayersPage
-
   ],
   imports: [
     BrowserModule,
@@ -69,14 +73,15 @@ import { ToastService } from '../services/toast.service';
     ListPage,
     SigninPage,
     SignupPage,
-    WalkthroughPage,
+    ResetPasswordPage,
+    ResetPasswordCodePage,
     RewardPage,
+    RewardDetailsPage,
     ConcertPage,
     GamePage,
     EventsListPage,
     RatingComponent,
     RatePlayersPage
-
   ],
   providers: [
     StatusBar,
@@ -87,8 +92,8 @@ import { ToastService } from '../services/toast.service';
     ToastService,
     MatchService,
     AngularFireAuth,
+    EarnService,
     { provide: ErrorHandler, useClass: IonicErrorHandler }
-
   ]
 })
 export class AppModule { }
