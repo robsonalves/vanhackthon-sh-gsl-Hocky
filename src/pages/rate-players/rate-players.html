@@ -37,7 +37,7 @@
             <h2> {{match?.team2?.name}}</h2>
           </ion-item>
           <rating max="5" (valueChanged)="rateMatch($event)"></rating>
-          <p *ngIf="match?.rate">#{{match?.rate}}</p>
+          <!-- <p *ngIf="match?.rate">#{{match?.rate}}</p> -->
         </ion-item>
       </ion-list>
       <button float-right margin-right ion-button color="primary" (click)="mat = 'team1'">
