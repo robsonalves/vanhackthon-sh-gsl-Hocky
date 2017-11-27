@@ -94,7 +94,61 @@
             
 
         
-    }
+    },
+ "reward":[
+        {
+         "date":"2017-11-23",
+         "point":"20",
+         "place":"Bell Centre"
+        },
+        {
+         "date":"2017-11-23",
+         "point":"20",
+         "place":"Bell Centre"
+        },
+        {
+         "date":"2017-11-23",
+         "point":"20",
+         "place":"Bell Centre"
+        },
+        {
+         "date":"2017-11-23",
+         "point":"20",
+         "place":"Bell Centre"
+        }
+     
+    ],
+    "event-list" : {
+        "concert-0" : {
+          "date" : "December 4, 2017",
+          "desc" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas a imperdiet elit, nec bibendum mi. Ut finibus molestie    purus. Aenean scelerisque porttitor mi, sit amet suscipit tortor cursus sed.",
+          "id" : 3,
+          "img" : "https://upload.wikimedia.org/wikipedia/commons/1/1c/Paramore_Concert.jpg",
+          "title" : "Paramore"
+        },
+        "concert-1" : {
+          "date" : "December 18, 2017",
+          "desc" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas a imperdiet elit, nec bibendum mi. Ut finibus molestie purus. Aenean scelerisque porttitor mi, sit amet suscipit tortor cursus sed.",
+          "id" : 4,
+          "img" : "http://achabrasilia.com/wp-content/uploads/2010/09/Scorpions-1-Foto-de-Marcelo-Dischinger1.jpg",
+          "title" : "Scorpions Show"
+        },
+        "game-0" : {
+          "date" : "November 25, 2017",
+          "desc" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas a imperdiet elit, nec bibendum mi. Ut finibus molestie    purus. Aenean scelerisque porttitor mi, sit amet suscipit tortor cursus sed.",
+          "id" : 1,
+          "img" : "https://i.pinimg.com/736x/ad/3a/6d/ad3a6dc3cff9db3bf6225d3e28b5669b--hockey-games-hockey-players.jpg",
+          "title" : "Pittsburgh Penguins vs Toronto Maple Leaf"
+        },
+        "game-1" : {
+          "date" : "December 18, 2017",
+          "desc" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas a imperdiet elit, nec bibendum mi. Ut finibus molestie purus. Aenean scelerisque porttitor mi, sit amet suscipit tortor cursus sed.",
+          "id" : 2,
+          "img" : "http://achabrasilia.com/wp-content/uploads/2010/09/Scorpions-1-Foto-de-Marcelo-Dischinger1.jpg",
+          "title" : "Scorpions Show"
+        }
+      }
+
 
 
 }

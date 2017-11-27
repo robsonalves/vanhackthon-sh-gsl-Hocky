@@ -1,4 +1,3 @@
-import { PopupService } from './../services/popup.service';
 
 import { RatePlayersPage } from './../pages/rate-players/rate-players';
 import { RatingComponent } from './../components/rating/rating';

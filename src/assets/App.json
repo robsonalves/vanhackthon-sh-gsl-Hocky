@@ -1,0 +1,227 @@
+{
+  "event-joined" : {
+    "-KzuhZvbjjbqNzqEVL3p" : {
+      "eventKey" : "1",
+      "key" : "-KzuhZvbjjbqNzqEVL3p",
+      "username" : "user@vanhack.com"
+    },
+    "-KzuhbdEKtSteBisJbFz" : {
+      "eventKey" : "-KzueMVhMDyczYxUNgyA",
+      "key" : "-KzuhbdEKtSteBisJbFz",
+      "username" : "user@vanhack.com"
+    }
+  },
+  "event-list" : {
+    "concert-0" : {
+      "date" : "December 4, 2017",
+      "desc" : "ROLLING LOUD SOCAL NOS Events Center San Bernardino, CA",
+      "id" : 3,
+      "img" : "https://upload.wikimedia.org/wikipedia/commons/1/1c/Paramore_Concert.jpg",
+      "title" : "ROLLING LOUD SOCAL"
+    },
+    "concert-1" : {
+      "date" : "December 18, 2017",
+      "desc" : "INNINGS FESTIVAL Tempe Beach Park & Arts Park Tempe, AZ",
+      "id" : 4,
+      "img" : "http://achabrasilia.com/wp-content/uploads/2010/09/Scorpions-1-Foto-de-Marcelo-Dischinger1.jpg",
+      "title" : "INNINGS FESTIVAL"
+    },
+    "game-0" : {
+      "date" : "November 25, 2017",
+      "desc" : "Streaking Boston goes back to Rask in net against struggling Edmonton (NHLN) Follow the action",
+      "id" : 1,
+      "img" : "https://nhl.bamcontent.com/images/photos/293393668/2568x1444/cut.jpg",
+      "title" : "LIVE: Oilers at Bruins"
+    },
+    "game-1" : {
+      "date" : "December 18, 2017",
+      "desc" : "Rangers win eighth straight at home",
+      "id" : 2,
+      "img" : "https://nhl.bamcontent.com/images/photos/293392376/960x540/cut.jpg",
+      "title" : "Rangers showdown"
+    }
+  },
+  "events" : {
+    "0" : {
+      "comments" : "32",
+      "date" : "2017-11-23",
+      "description" : " Featuring the best teams in North America, this year’s tournament is currently in the playoff stages",
+      "imgUrl" : "http://cafcom.wpengine.com/wp-content/uploads/2017/02/Stanley-Cup-2007.jpg",
+      "likes" : "65",
+      "name" : "The Stanley Cup"
+    },
+    "1" : {
+      "comments" : "54",
+      "date" : "2017-11-23",
+      "description" : "One month until puck drop! Can’t wait to Watch the Future with @TSN_Sports (tune into the @CFL #GreyCup tonight for a sneak peek 😉🇨🇦).",
+      "imgUrl" : "https://cdn.hockeycanada.ca/hockey-canada/Corporate/Events/2014_event_collage_640.jpg",
+      "likes" : "153",
+      "name" : " IIHF World Junior Championship"
+    },
+    "-KzueMVhMDyczYxUNgyA" : {
+      "checkedIn" : false,
+      "comments" : 15,
+      "date" : "November 25, 2017",
+      "description" : "Quinnipiac University Men's Ice Hockey vs Dartmouth  TV: ESPN3  Radio: AM 1220 WQUN ",
+      "eventType" : "game",
+      "imgUrl" : "https://d3e1o4bcbhmj8g.cloudfront.net/photos/200276/big_square/060b2ddf65bc82f0ee7f0f22a1bb00e1f5232315.jpg",
+      "liked" : false,
+      "likes" : 2,
+      "name" : "Quinnipiac University Men's Ice Hockey vs Dartmouth"
+    },
+    "-KzueQr9TlLE-r7WmjmW" : {
+      "checkedIn" : false,
+      "comments" : 15,
+      "date" : "November 25, 2017",
+      "description" : "\tWest Regional Semifinal: No. 3 North Dakota vs. No. 2 Boston University",
+      "eventType" : "game",
+      "imgUrl" : "https://i.pinimg.com/736x/ad/3a/6d/ad3a6dc3cff9db3bf6225d3e28b5669b--hockey-games-hockey-players.jpg",
+      "liked" : false,
+      "likes" : 2,
+      "name" : "West Regional Semifinal:"
+    }
+  },
+  "match" : {
+    "name" : "Pittsburgh Penguins vs Toronto Maple Leaf",
+    "referee" : "test",
+    "team1" : {
+      "chief" : "Rafael Reis",
+      "imgUrl" : "./assets/imgs/penguins.png",
+      "name" : "Pittsburgh Penguins",
+      "players" : [ {
+        "Age" : "25",
+        "imgUrl" : "./assets/imgs/players/JoshArchibald.jpg",
+        "name" : "Josh Archibald",
+        "number" : "45",
+        "position" : "RW",
+        "shoot" : "Right"
+      }, {
+        "Age" : "30",
+        "imgUrl" : "./assets/imgs/players/SidneyCrosby.jpg",
+        "name" : "Sidney Crosby",
+        "number" : "87",
+        "position" : "C",
+        "shoot" : "Left"
+      }, {
+        "Age" : "23",
+        "imgUrl" : "./assets/imgs/players/JakeGuentzel.jpg",
+        "name" : "Jake Guentzel ",
+        "number" : "59",
+        "position" : "C",
+        "shoot" : "Left"
+      } ]
+    },
+    "team2" : {
+      "chief" : "Rafael Reis",
+      "imgUrl" : "./assets/imgs/toronto.png",
+      "name" : "Toronto maple Leaf",
+      "players" : [ {
+        "age" : "31",
+        "imgUrl" : "./assets/imgs/players/TylerBozak.jpg",
+        "name" : "Tyler Bozak",
+        "number" : "42",
+        "position" : "C",
+        "shoot" : "Right"
+      }, {
+        "age" : "23",
+        "imgUrl" : "./assets/imgs/players/ConnorBrown.jpg",
+        "name" : "Connor Brown",
+        "number" : "28",
+        "position" : "RW",
+        "shoot" : "Left"
+      }, {
+        "age" : "25",
+        "imgUrl" : "./assets/imgs/players/ZachHyman.jpg",
+        "name" : "Zach Hyman",
+        "number" : "11",
+        "position" : "C",
+        "shoot" : "Right"
+      } ]
+    }
+  },
+  "reward" : [ {
+    "date" : "2017-11-23",
+    "place" : "Bell Centre",
+    "point" : "20"
+  }, {
+    "date" : "2017-11-23",
+    "place" : "Bell Centre",
+    "point" : "20"
+  }, {
+    "date" : "2017-11-23",
+    "place" : "Bell Centre",
+    "point" : "20"
+  }, {
+    "date" : "2017-11-23",
+    "place" : "Bell Centre",
+    "point" : "20"
+  } ],
+  "rewards" : {
+    "-KzueMW8du6sBSk8b_OV" : {
+      "date" : 1511738931067,
+      "key" : "user@vanhack.com",
+      "place" : "Pittsburgh Penguins vs Toronto Maple Leaf",
+      "point" : 30
+    },
+    "-KzueQrEjLHgBtJ_ZYnR" : {
+      "date" : 1511738950565,
+      "key" : "robson.infoo@gmail.com",
+      "place" : "Pittsburgh Penguins vs Toronto Maple Leaf",
+      "point" : 30
+    },
+    "-KzuekkAEgrlBBvrR6F2" : {
+      "date" : 1511739036131,
+      "key" : "robson.infoo@gmail.com",
+      "place" : "Jake Guentzel ",
+      "point" : 5
+    },
+    "-KzuekkEjk0SQSvZ8UOa" : {
+      "date" : 1511739036133,
+      "key" : "robson.infoo@gmail.com",
+      "place" : "Sidney Crosby",
+      "point" : 5
+    },
+    "-KzuekkK3fCzcX0VTlPj" : {
+      "date" : 1511739036140,
+      "key" : "robson.infoo@gmail.com",
+      "place" : "Josh Archibald",
+      "point" : 5
+    },
+    "-KzuekkOoba03VGB8ana" : {
+      "date" : 1511739036143,
+      "key" : "robson.infoo@gmail.com",
+      "place" : "Tyler Bozak",
+      "point" : 5
+    },
+    "-KzuekkQZ5V2CkgMuczX" : {
+      "date" : 1511739036146,
+      "key" : "robson.infoo@gmail.com",
+      "place" : "Connor Brown",
+      "point" : 5
+    },
+    "-KzuekkS3MY1lL1Ek6P_" : {
+      "date" : 1511739036148,
+      "key" : "robson.infoo@gmail.com",
+      "place" : "Zach Hyman",
+      "point" : 5
+    },
+    "-KzuekkXth_pN5hiG2hh" : {
+      "date" : 1511739036153,
+      "key" : "robson.infoo@gmail.com",
+      "place" : "Pittsburgh Penguins vs Toronto Maple Leaf",
+      "point" : 5
+    },
+    "-KzuhZwCImMUEeDA7o3X" : {
+      "date" : 1511739772457,
+      "key" : "user@vanhack.com",
+      "place" : " IIHF World Junior Championship",
+      "point" : 30
+    },
+    "-KzuhbdWVn8SOAzU87NH" : {
+      "date" : 1511739783548,
+      "key" : "user@vanhack.com",
+      "place" : "Pittsburgh Penguins vs Toronto Maple Leaf",
+      "point" : 30
+    }
+  }
+}
