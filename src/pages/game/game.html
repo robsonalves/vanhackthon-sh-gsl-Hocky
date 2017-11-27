@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title></ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <ion-card *ngFor="let event of eventlist$ | async">
+    <ion-item>
+      <h2>
+        {{event.title}}
+      </h2>
+      <p>{{event.date}}</p>
+    </ion-item>
+    <img src="{{event.img}}">
+    <ion-card-content>
+      <p>{{event.desc}}</p>
+      <hr>
+      <button margin-bottom float-right ion-button color="primary" (click)="join(event)">
+        Join
+      </button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

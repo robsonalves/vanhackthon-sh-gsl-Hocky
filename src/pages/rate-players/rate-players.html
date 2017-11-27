@@ -1,0 +1,92 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Rate Game and Players</ion-title>
+  </ion-navbar>
+  <ion-segment [(ngModel)]="mat">
+    <ion-segment-button value="match">
+      Match
+    </ion-segment-button>
+    <ion-segment-button value="team1">
+      Team 1
+    </ion-segment-button>
+    <ion-segment-button value="team2">
+      Team 2
+    </ion-segment-button>
+  </ion-segment>
+</ion-header>
+
+<ion-content>
+  <div [ngSwitch]="mat">
+    <div *ngSwitchCase="'match'">
+      <ion-list>
+        <ion-item text-center>
+          <ion-item>
+            <ion-thumbnail item-start>
+              <img [src]="match?.team1?.imgUrl">
+            </ion-thumbnail>
+            <h2> {{match?.team1?.name}}</h2>
+          </ion-item>
+          <h6>VS</h6>
+          <ion-item>
+            <ion-thumbnail item-start>
+              <img [src]="match?.team2?.imgUrl">
+            </ion-thumbnail>
+            <h2> {{match?.team2?.name}}</h2>
+          </ion-item>
+          <rating max="5" (valueChanged)="rateMatch($event)"></rating>
+          <!-- <p *ngIf="match?.rate">#{{match?.rate}}</p> -->
+        </ion-item>
+      </ion-list>
+      <button float-right margin-right ion-button color="primary" (click)="mat = 'team1'">
+        Next
+      </button>
+    </div>
+    <div *ngSwitchCase="'team1'">
+      <ion-list>
+        <ion-item>
+          <ion-thumbnail item-start>
+            <img [src]="match?.team1?.imgUrl">
+          </ion-thumbnail>
+          <h2> {{match?.team1?.name}}</h2>
+        </ion-item>
+        <ion-item *ngFor="let player of match?.team1?.players">
+          <ion-avatar item-start>
+            <img [src]="player.imgUrl">
+          </ion-avatar>
+          <h2>{{player?.name}}</h2>
+          <p>#{{player.number}} | Age: {{player.age}} | Pos: {{player.position}} | Shoot: {{player.shoot}}</p>
+          <rating max="5" (valueChanged)="rate(player,$event)"></rating>
+          <ion-note item-end *ngIf="player.rate">#{{player.rate}}</ion-note>
+        </ion-item>
+      </ion-list>
+      <button float-right margin-right ion-button color="primary" (click)="mat = 'team2'">
+        Next
+      </button>
+    </div>
+    <div *ngSwitchCase="'team2'">
+      <ion-list>
+        <ion-item>
+          <ion-thumbnail item-start>
+            <img [src]="match?.team2?.imgUrl">
+          </ion-thumbnail>
+          <h2> {{match?.team2?.name}}</h2>
+        </ion-item>
+        <ion-item *ngFor="let player of match?.team2?.players">
+          <ion-avatar item-start>
+            <img [src]="player.imgUrl">
+          </ion-avatar>
+          <h2>{{player?.name}} #{{player.number}}</h2>
+          <p> Age: {{player.age}} | Position: {{player.position}} | Shoot: {{player.shoot}}</p>
+          <rating max="5" (valueChanged)="rate(player,$event)"></rating>
+          <ion-note item-end *ngIf="player.rate">#{{player.rate}}</ion-note>
+        </ion-item>
+      </ion-list>
+      <button float-right margin-right ion-button color="primary" (click)="saveRatings()">
+        Save
+      </button>
+    </div>
+  </div>
+</ion-content>
