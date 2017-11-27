@@ -1,5 +1,3 @@
-import { EarnService } from './../../services/earn.service';
-import { ToastService } from './../../services/toast.service';
 import { SigninPage } from './../signin/signin';
 import { AuthService } from './../../services/auth.service';
 import { PopupService } from './../../services/popup.service';
